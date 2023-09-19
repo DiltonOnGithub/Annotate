@@ -43,3 +43,36 @@ test('Quora Login', async({ page })=>{
   await page.keyboard.press('Enter');
   await page.getByRole('link',{name:'Following'}).hover();
 });
+
+test('Annotate', async ({ page }) => {
+  await page.goto('https://staging.annotate.net/');
+  await page.getByRole('link', { name: 'Features' }).click();
+  await page.getByRole('link', { name: 'Tour' }).click();
+  await page.getByRole('link', { name: 'Pricing' }).click();
+  await page.getByRole('link', { name: 'Downloads' }).click();
+  await page.locator('#menu').getByRole('link', { name: 'Tutorials' }).click();
+  await page.getByPlaceholder('Search').click();
+  await page.getByPlaceholder('Search').fill('features');
+  await page.getByPlaceholder('Search').press('Enter');
+  await page.getByRole('link', { name: 'Beta Annotate Logo' }).click();
+  await page.getByRole('link', { name: 'Free Signup' }).click();
+  await page.getByRole('link', { name: 'Sign in' }).click();
+  await page.getByRole('link', { name: 'Free Signup' }).click();
+  await page.locator('#user-sel-educator').click();
+  await page.getByRole('img', { name: 'back' }).click();
+  await page.locator('#user-sel-non-educator').click();
+  await page.getByRole('img', { name: 'back' }).click();
+  await page.locator('#user-sel-student').click();
+  await page.getByRole('img', { name: 'back' }).click();
+  await page.getByRole('link', { name: 'Login / Join' }).click();
+  await page.locator('#txtUsername').click();
+  await page.locator('#txtUsername').fill('dilton.d\'souza@zeuslearning.com');
+  await page.locator('#txtPassword').click();
+  await page.locator('#txtPassword').fill('Diltonlovesannotate@1098#');
+  await page.getByLabel('Remember me').check();
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.waitForTimeout(15000);
+  await page.goto('https://staging.annotate.net/instructor');
+  
+  await page.getByRole('button', { name: 'Logout' }).click();
+});
