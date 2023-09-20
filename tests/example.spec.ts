@@ -65,10 +65,7 @@ test('Annotate Home', async ({ page }) => {
   await page.locator('#user-sel-student').click();
   await page.getByRole('img', { name: 'back' }).click();
 });
-test('Annotate Logout', async ({ page }) => {
-  await page.goto('https://staging.annotate.net/instructor');
-  await page.getByRole('button', { name: 'Logout' }).click();
-});
+
 
 test('Annotate Login', async ({ page }) => {
   await page.goto('https://staging.annotate.net/');
@@ -79,4 +76,11 @@ test('Annotate Login', async ({ page }) => {
   await page.locator('#txtPassword').fill('Diltonlovesannotate@1098#');
   await page.getByLabel('Remember me').check();
   await page.getByRole('button', { name: 'Login' }).click();
+});
+test('Annotate Logout', async ({ page }) => {
+  await page.goto('https://staging.annotate.net/instructor');
+  await page.getByRole('button', { name: 'Logout' }).hover();
+  await page.waitForTimeout(10000);
+  await page.getByRole('button', { name: 'Logout' }).click();
+  await page.goto('https://staging.annotate.net/login.php');
 });
