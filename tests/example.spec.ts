@@ -44,7 +44,7 @@ test('Quora Login', async({ page })=>{
   await page.getByRole('link',{name:'Following'}).hover();
 });
 
-test('Annotate', async ({ page }) => {
+test('Annotate Home', async ({ page }) => {
   await page.goto('https://staging.annotate.net/');
   await page.getByRole('link', { name: 'Features' }).click();
   await page.getByRole('link', { name: 'Tour' }).click();
@@ -64,6 +64,14 @@ test('Annotate', async ({ page }) => {
   await page.getByRole('img', { name: 'back' }).click();
   await page.locator('#user-sel-student').click();
   await page.getByRole('img', { name: 'back' }).click();
+});
+test('Annotate Logout', async ({ page }) => {
+  await page.goto('https://staging.annotate.net/instructor');
+  await page.getByRole('button', { name: 'Logout' }).click();
+});
+
+test('Annotate Login', async ({ page }) => {
+  await page.goto('https://staging.annotate.net/');
   await page.getByRole('link', { name: 'Login / Join' }).click();
   await page.locator('#txtUsername').click();
   await page.locator('#txtUsername').fill('dilton.d\'souza@zeuslearning.com');
@@ -71,8 +79,4 @@ test('Annotate', async ({ page }) => {
   await page.locator('#txtPassword').fill('Diltonlovesannotate@1098#');
   await page.getByLabel('Remember me').check();
   await page.getByRole('button', { name: 'Login' }).click();
-  await page.waitForTimeout(15000);
-  await page.goto('https://staging.annotate.net/instructor');
-  
-  await page.getByRole('button', { name: 'Logout' }).click();
 });
