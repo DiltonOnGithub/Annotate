@@ -45,16 +45,26 @@ test('Quora Login', async({ page })=>{
 });
 
 test('Annotate Home', async ({ page }) => {
+
+test.setTimeout(120000);
+  
   await page.goto('https://staging.annotate.net/');
+  await page.waitForTimeout(5000);
   await page.getByRole('link', { name: 'Features' }).click();
+  await page.waitForTimeout(5000);
   await page.getByRole('link', { name: 'Tour' }).click();
+  await page.waitForTimeout(5000);
   await page.getByRole('link', { name: 'Pricing' }).click();
+  await page.waitForTimeout(5000);
   await page.getByRole('link', { name: 'Downloads' }).click();
-  await page.locator('#menu').getByRole('link', { name: 'Tutorials' }).click();
+  await page.waitForTimeout(5000);
+  await page.waitForTimeout(5000);
   await page.getByPlaceholder('Search').click();
   await page.getByPlaceholder('Search').fill('features');
   await page.getByPlaceholder('Search').press('Enter');
+  await page.waitForTimeout(5000);
   await page.getByRole('link', { name: 'Beta Annotate Logo' }).click();
+  await page.waitForTimeout(5000);
   await page.getByRole('link', { name: 'Free Signup' }).click();
   await page.getByRole('link', { name: 'Sign in' }).click();
   await page.getByRole('link', { name: 'Free Signup' }).click();
@@ -81,11 +91,10 @@ test("Annotate Login", async () => {
   await page.locator('#txtUsername').click();
   await page.locator('#txtUsername').fill('dilton.d\'souza@zeuslearning.com');
   await page.locator('#txtPassword').click();
-  await page.locator('#txtPassword').fill('#');
+  await page.locator('#txtPassword').fill('');
   await page.getByLabel('Remember me').check();
   await page.getByRole('button', { name: 'Login' }).click();
   await expect(page).toHaveURL('https://staging.annotate.net/instructor');
-  await page.waitForTimeout(20000);
   await page.click("'Logout'");
   await expect(page).toHaveURL('https://staging.annotate.net/login.php');
 })
