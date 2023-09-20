@@ -5,7 +5,7 @@ test('test', async ({ page }) => {
   await page.getByLabel('Email').click();
   await page.getByLabel('Email').fill('diltondsouza1@gmail.com');
   await page.getByLabel('Password').click();
-  await page.getByLabel('Password').fill('');
+  await page.getByLabel('Password').fill('######');
   await page.getByRole('button', { name: 'Login' }).click();
   await page.getByLabel('Spaces').getByRole('img').click();
   await page.getByPlaceholder('Search Quora').click();

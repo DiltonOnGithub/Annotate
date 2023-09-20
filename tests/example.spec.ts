@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { chromium, test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {
   await page.goto('https://playwright.dev/');
@@ -67,7 +67,15 @@ test('Annotate Home', async ({ page }) => {
 });
 
 
-test('Annotate Login', async ({ page }) => {
+
+test("Annotate Login", async () => {
+  const browser = await chromium.launch({
+    headless: false
+  });
+  test.setTimeout(120000);
+  const context = await browser.newContext();
+  const page = await context.newPage();
+
   await page.goto('https://staging.annotate.net/');
   await page.getByRole('link', { name: 'Login / Join' }).click();
   await page.locator('#txtUsername').click();
@@ -76,11 +84,8 @@ test('Annotate Login', async ({ page }) => {
   await page.locator('#txtPassword').fill('#');
   await page.getByLabel('Remember me').check();
   await page.getByRole('button', { name: 'Login' }).click();
-});
-test('Annotate Logout', async ({ page }) => {
-  await page.goto('https://staging.annotate.net/instructor');
-  await page.getByRole('button', { name: 'Logout' }).hover();
-  await page.waitForTimeout(10000);
-  await page.getByRole('button', { name: 'Logout' }).click();
-  await page.goto('https://staging.annotate.net/login.php');
-});
+  await expect(page).toHaveURL('https://staging.annotate.net/instructor');
+  await page.waitForTimeout(20000);
+  await page.click("'Logout'");
+  await expect(page).toHaveURL('https://staging.annotate.net/login.php');
+})
