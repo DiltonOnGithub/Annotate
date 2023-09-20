@@ -32,7 +32,7 @@ test('Quora About', async({ page })=>{
 test('Quora Login', async({ page })=>{
   await page.goto('https://www.quora.com');
   await page.getByRole('textbox',{ name : 'email'}).fill('diltondsouza1@gmail.com');
-  await page.getByRole('textbox',{ name : 'password'}).fill('Diltonlovesquora@1098#');
+  await page.getByRole('textbox',{ name : 'password'}).fill('#');
   await page.getByRole('button',{ name : 'Login'}).hover();
   await page.getByRole('button',{ name : 'Login'}).click();
   await page.getByRole('link',{name:'Following'}).hover();
@@ -73,7 +73,7 @@ test('Annotate Login', async ({ page }) => {
   await page.locator('#txtUsername').click();
   await page.locator('#txtUsername').fill('dilton.d\'souza@zeuslearning.com');
   await page.locator('#txtPassword').click();
-  await page.locator('#txtPassword').fill('Diltonlovesannotate@1098#');
+  await page.locator('#txtPassword').fill('#');
   await page.getByLabel('Remember me').check();
   await page.getByRole('button', { name: 'Login' }).click();
 });
