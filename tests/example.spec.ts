@@ -85,7 +85,10 @@ test("Annotate Login", async () => {
   await page.getByLabel('Remember me').check();
   await page.getByRole('button', { name: 'Login' }).click();
   await expect(page).toHaveURL('https://staging.annotate.net/instructor');
-  await page.waitForTimeout(20000);
+  
   await page.click("'Logout'");
+
   await expect(page).toHaveURL('https://staging.annotate.net/login.php');
-})
+});
+
+test('should first', async ({page}) => {  })
