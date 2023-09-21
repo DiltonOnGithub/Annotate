@@ -96,5 +96,6 @@ test("Annotate Login", async () => {
   await page.getByRole('button', { name: 'Login' }).click();
   await expect(page).toHaveURL('https://staging.annotate.net/instructor');
   await page.click("'Logout'");
+
   await expect(page).toHaveURL('https://staging.annotate.net/login.php');
-})
+});
