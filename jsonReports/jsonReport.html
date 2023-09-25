@@ -1,7 +1,7 @@
 {
   "config": {
     "configFile": "D:\\TaskCodes\\Annotate\\playwright.config.ts",
-    "rootDir": "D:/TaskCodes/Annotate/tests",
+    "rootDir": "D:/TaskCodes/Annotate",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -44,7 +44,7 @@
         "retries": 0,
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/TaskCodes/Annotate/tests",
+        "testDir": "D:/TaskCodes/Annotate",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -60,13 +60,13 @@
   },
   "suites": [
     {
-      "title": "annotate.spec.ts",
-      "file": "annotate.spec.ts",
+      "title": "src\\tests\\notebookCreate.spec.ts",
+      "file": "src/tests/notebookCreate.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Annotate Login",
+          "title": "Create Notebook",
           "ok": true,
           "tags": [],
           "tests": [
@@ -79,21 +79,21 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 25534,
+                  "status": "interrupted",
+                  "duration": 54252,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-09-21T12:28:56.320Z",
+                  "startTime": "2023-09-25T12:30:47.516Z",
                   "attachments": []
                 }
               ],
-              "status": "expected"
+              "status": "skipped"
             }
           ],
-          "id": "a250cf8becba5701e327-5863779e0638c47865dd",
-          "file": "annotate.spec.ts",
+          "id": "32334ec2eab867a63f0a-29aac6938e8f8a6276d1",
+          "file": "src/tests/notebookCreate.spec.ts",
           "line": 9,
           "column": 5
         }
