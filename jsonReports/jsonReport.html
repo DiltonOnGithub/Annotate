@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "D:\\TaskCodes\\Annotate\\playwright.config.ts",
-    "rootDir": "D:/TaskCodes/Annotate",
+    "configFile": "D:\\Dilton\\Zeus\\Annotate\\playwright.config.ts",
+    "rootDir": "D:/Dilton/Zeus/Annotate/src/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -39,12 +39,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "D:/TaskCodes/Annotate/test-results",
+        "outputDir": "D:/Dilton/Zeus/Annotate/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/TaskCodes/Annotate",
+        "testDir": "D:/Dilton/Zeus/Annotate/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -60,42 +60,71 @@
   },
   "suites": [
     {
-      "title": "src\\tests\\notebookCreate.spec.ts",
-      "file": "src/tests/notebookCreate.spec.ts",
+      "title": "notebook.spec.ts",
+      "file": "notebook.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [
+      "specs": [],
+      "suites": [
         {
-          "title": "Create Notebook",
-          "ok": true,
-          "tags": [],
-          "tests": [
+          "title": "Notebook Test Cases",
+          "file": "notebook.spec.ts",
+          "line": 17,
+          "column": 15,
+          "specs": [
             {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
+              "title": "Create Notebook",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 0,
-                  "status": "interrupted",
-                  "duration": 40514,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-09-26T07:42:02.750Z",
-                  "attachments": []
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 21807,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Create Notebook",
+                          "duration": 18841
+                        },
+                        {
+                          "title": "Exit Notebook",
+                          "duration": 12,
+                          "steps": [
+                            {
+                              "title": "Exit Notebook",
+                              "duration": 10
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Logout",
+                          "duration": 2911
+                        }
+                      ],
+                      "startTime": "2023-09-26T12:01:11.128Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "skipped"
+              "id": "1f73cefbff9118457938-6151dc3b0e293b9d9c91",
+              "file": "notebook.spec.ts",
+              "line": 24,
+              "column": 7
             }
-          ],
-          "id": "32334ec2eab867a63f0a-29aac6938e8f8a6276d1",
-          "file": "src/tests/notebookCreate.spec.ts",
-          "line": 9,
-          "column": 5
+          ]
         }
       ]
     }

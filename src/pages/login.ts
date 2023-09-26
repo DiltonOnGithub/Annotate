@@ -1,8 +1,17 @@
-import { Page } from "@playwright/test";
-export default class LoginPage {
+import { BrowserContext, Page, expect } from "@playwright/test";
 
-    constructor(public page: Page) { }
-    async login(email: string, password: string) {
+export default class LoginPage {
+    page: Page;
+    context: BrowserContext;
+    constructor() {
+        
+    }
+    async login(context: BrowserContext, page: Page, email: string, password: string) {
+        this.page = page;
+        this.context = context;
+        await this.page.goto('https://staging.annotate.net/');
+        await this.page.getByRole('link', { name: 'Login / Join' }).click();
+        await expect(this.page).toHaveURL('https://staging.annotate.net/login.php');
         await this.enterEmail(email);
         await this.enterLoginPassword(password);
         await this.RememberMe();
