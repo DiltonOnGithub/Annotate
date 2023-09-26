@@ -6,7 +6,7 @@ import {notebookSteps} from '../steps/notebook.steps'
 
 const email = data["email"];
 const password = data["password"];
-const MyNotebook = "Dilton123456";
+const MyNotebook = "Dilton1234567890121";
 
 let context: BrowserContext;
 let page: Page;
@@ -26,10 +26,9 @@ test.describe.serial('Notebook Test Cases', () => {
       await test.step('Create Notebook', async ()=>{
           await Notebook.createNotebook(context, page, MyNotebook);
       });
-      await test.step('Exit Notebook', async () => {
-        await notebookSteps.exitNotebook(page, Notebook);
-      });
+      await notebookSteps.exitNotebook(page, Notebook);
       await test.step('Logout', async ()=>{
+        await expect(page).toHaveURL('https://staging.annotate.net/instructor');
         await page.click("'Logout'");
         await expect(page).toHaveURL('https://staging.annotate.net/login.php');
       })   

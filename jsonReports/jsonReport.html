@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "D:\\Dilton\\Zeus\\Annotate\\playwright.config.ts",
-    "rootDir": "D:/Dilton/Zeus/Annotate/src/tests",
+    "configFile": "D:\\TaskCodes\\Annotate\\playwright.config.ts",
+    "rootDir": "D:/TaskCodes/Annotate/src/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -39,12 +39,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "D:/Dilton/Zeus/Annotate/test-results",
+        "outputDir": "D:/TaskCodes/Annotate/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/Dilton/Zeus/Annotate/src/tests",
+        "testDir": "D:/TaskCodes/Annotate/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -74,7 +74,7 @@
           "specs": [
             {
               "title": "Create Notebook",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -86,37 +86,65 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 21807,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 20541,
+                      "error": {
+                        "message": "\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"https://staging.annotate.net/\u001b[7mlogin.php\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"https://staging.annotate.net/\u001b[7minstructor\u001b[27m\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveURL with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"https://staging.annotate.net/\u001b[7mlogin.php\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"https://staging.annotate.net/\u001b[7minstructor\u001b[27m\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveURL with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\n    at D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts:33:28\n    at D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts:30:7",
+                        "location": {
+                          "file": "D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts",
+                          "column": 28,
+                          "line": 33
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://staging.annotate.net/instructor'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"'Logout'\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://staging.annotate.net/login.php'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m       })   \u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m   })\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m })\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts",
+                            "column": 28,
+                            "line": 33
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"https://staging.annotate.net/\u001b[7mlogin.php\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"https://staging.annotate.net/\u001b[7minstructor\u001b[27m\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveURL with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://staging.annotate.net/instructor'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"'Logout'\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://staging.annotate.net/login.php'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m       })   \u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m   })\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m })\u001b[0m\n\n\u001b[2m    at D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts:33:28\u001b[22m\n\u001b[2m    at D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts:30:7\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
                       "steps": [
                         {
                           "title": "Create Notebook",
-                          "duration": 18841
+                          "duration": 13115
                         },
                         {
                           "title": "Exit Notebook",
-                          "duration": 12,
-                          "steps": [
-                            {
-                              "title": "Exit Notebook",
-                              "duration": 10
-                            }
-                          ]
+                          "duration": 9
                         },
                         {
                           "title": "Logout",
-                          "duration": 2911
+                          "duration": 7340,
+                          "error": {
+                            "message": "\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"https://staging.annotate.net/\u001b[7mlogin.php\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"https://staging.annotate.net/\u001b[7minstructor\u001b[27m\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveURL with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n",
+                            "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"https://staging.annotate.net/\u001b[7mlogin.php\u001b[27m\"\u001b[39m\nReceived string: \u001b[31m\"https://staging.annotate.net/\u001b[7minstructor\u001b[27m\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveURL with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\u001b[2m  -   locator resolved to <html lang=\"en\" class=\"wf-opensans-n4-active wf-opensa…>…</html>\u001b[22m\n\u001b[2m  -   unexpected value \"https://staging.annotate.net/instructor\"\u001b[22m\n\n    at D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts:33:28\n    at D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts:30:7",
+                            "location": {
+                              "file": "D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts",
+                              "column": 28,
+                              "line": 33
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://staging.annotate.net/instructor'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"'Logout'\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://staging.annotate.net/login.php'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m       })   \u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m   })\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m })\u001b[0m"
+                          }
                         }
                       ],
-                      "startTime": "2023-09-26T12:01:11.128Z",
-                      "attachments": []
+                      "startTime": "2023-09-26T13:29:01.340Z",
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts",
+                        "column": 28,
+                        "line": 33
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "1f73cefbff9118457938-6151dc3b0e293b9d9c91",

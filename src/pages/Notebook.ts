@@ -11,11 +11,11 @@ export default class Notebook {
         //expect(containerBox);
         await this.page.locator('xpath=//div[@class="widget fab-action-container"]//div[@class="widget clickable fab-action"]//div[@class="widget label" and text()="Notebook"]').click();
         const dialogBox = this.page.locator('xpath=//div[@class="widget xdialog" and @data-id="NewNotebookDialog"]')
-        expect(dialogBox);
+        expect(dialogBox).toBeVisible();
         //await this.page.locator('xpath=//div[@class="widget input-widget-container active" and @data-id="XInputWidget"]//input[@class="widget input-widget"]').click();
-        // await this.page.locator('xpath=//div[@class="widget input-widget-container active" and @data-id="XInputWidget"]//input[@class="widget input-widget"]').fill(NotebookName);
-        await this.page.getByRole('textbox').click();
-        await this.page.getByRole('textbox').fill(NotebookName);
+        await this.page.locator('//*[@data-id="NewNotebookDialog"]//input[@data-id="ZInputWidget"]').fill(NotebookName);
+        //await this.page.getByRole('textbox').click();
+        //await this.page.getByRole('textbox').fill(NotebookName);
         await this.page.locator('xpath=//div[@class="widget xdialog" and @data-id="NewNotebookDialog"]//div[@class="widget footer" and @data-id="XDialogFooter"]//div[@class="widget clickable button" and text()="Create"]').click();
         expect(this.page.locator('xpath=//div[@class="widget toolbar drawing-toolbar" and @data-id="XNotebookToolbar"]//div[@class="widget label" and @data-id="Z"]')).toHaveText(NotebookName);
         
