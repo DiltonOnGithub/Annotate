@@ -7,6 +7,8 @@ export const contentLibraryPage = {
     trashTitle: (page: Page) => page.locator('//*[@data-id="XUserDriveInfoBar"]//*[@data-id="ZWidgetClickable" and text()="Trash"]'),
     trashBackbutton: (page: Page) => page.locator('//*[@data-id="XUserDriveInfoBar"]//*[@data-id="XIconButton"]'),
     trashNotebookCardDelete: (page: Page) => page.locator('//*[@data-id="TrashMoreOption"]//*[@data-id="XMenuItemWithIcon"]//*[@data-id="Z" and text()="Delete"]'),
+    trashConfirmDeleteBox: (page: Page) => page.locator('//*[@data-id="XMessageBox"]'),
+    trashConfirmDeleteButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
     //Notebook Card
     notebookCardName: (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and @title="${notebookName}"]`),
     notebookCardDots:  (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and @title="${notebookName}"]/following-sibling::div[1]//div[1]`),

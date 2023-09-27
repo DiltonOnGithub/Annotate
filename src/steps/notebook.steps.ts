@@ -27,19 +27,20 @@ export const notebookSteps ={
         await contentLibraryPage.notebookCardMenuMoreButton(page).click()
         await expect(contentLibraryPage.notebookCardMoreMenu(page)).toBeVisible()
         await contentLibraryPage.notebookDeleteButton(page).click()
-        await expect(contentLibraryPage.notebookCardName(page, notebookName).count()).toEqual(0);
+        await expect(contentLibraryPage.notebookCardName(page, notebookName)).toBeEmpty()
     },
     harddeleteNotebook: async(page: Page, notebookName: string) => {
         await expect(contentLibraryPage.contentPageToolbar(page)).toBeVisible()
         await expect(contentLibraryPage.trashButton(page)).toBeVisible()
         await contentLibraryPage.trashButton(page).click()
+        await expect(contentLibraryPage.trashTitle(page)).toHaveText("Trash")
         await expect(contentLibraryPage.notebookCardName(page, notebookName)).toBeVisible()
         await contentLibraryPage.notebookCardDots(page, notebookName).click()
-        await expect(contentLibraryPage.notebookCardMenu(page)).toBeVisible()
-        await contentLibraryPage.notebookCardMenuMoreButton(page).click()
-        await expect(contentLibraryPage.notebookCardMoreMenu(page)).toBeVisible()
-        await contentLibraryPage.notebookDeleteButton(page).click()
-        await expect(contentLibraryPage.notebookCardName(page, notebookName).count()).toEqual(0);
+        await contentLibraryPage.trashNotebookCardDelete(page).click()
+        await expect(contentLibraryPage.trashConfirmDeleteBox(page)).toBeVisible()
+        await contentLibraryPage.trashConfirmDeleteButton(page).click()
+        await expect(contentLibraryPage.notebookCardName(page, notebookName)).toBeEmpty()
+        await contentLibraryPage.trashBackbutton(page).click()
     },
     exitNotebook: async (page: Page, notebookName: string) => {
         await expect(notebookCanvaspage.notebookToolbar(page)).toBeVisible()

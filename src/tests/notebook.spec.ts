@@ -29,7 +29,8 @@ test.describe.serial('Notebook Test Cases', () => {
   })
   test("Delete Notebook", async () => {
     await expect(page).toHaveURL('https://staging.annotate.net/instructor')
-    await notebookSteps.softdeleteNotebook(page, 'Dilton')
+    await notebookSteps.softdeleteNotebook(page, 'New Notebook 2023.4')
+    
   })
   test("Logout", async () => {
     await expect(page).toHaveURL('https://staging.annotate.net/instructor');
