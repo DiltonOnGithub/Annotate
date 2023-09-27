@@ -20,6 +20,7 @@ export const notebookSteps ={
         await expect(contentLibraryPage.notebookCardName(page, notebookName)).toBeVisible()
     },
     softdeleteNotebook: async(page: Page, notebookName: string) => {
+        await expect(contentLibraryPage.contentPageToolbar(page)).toBeVisible()
         await expect(contentLibraryPage.notebookCardName(page, notebookName)).toBeVisible()
         await contentLibraryPage.notebookCardDots(page, notebookName).click()
         await expect(contentLibraryPage.notebookCardMenu(page)).toBeVisible()
@@ -29,6 +30,9 @@ export const notebookSteps ={
         await expect(contentLibraryPage.notebookCardName(page, notebookName).count()).toEqual(0);
     },
     harddeleteNotebook: async(page: Page, notebookName: string) => {
+        await expect(contentLibraryPage.contentPageToolbar(page)).toBeVisible()
+        await expect(contentLibraryPage.trashButton(page)).toBeVisible()
+        await contentLibraryPage.trashButton(page).click()
         await expect(contentLibraryPage.notebookCardName(page, notebookName)).toBeVisible()
         await contentLibraryPage.notebookCardDots(page, notebookName).click()
         await expect(contentLibraryPage.notebookCardMenu(page)).toBeVisible()
