@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 1,
+    "maxFailures": 0,
     "metadata": {
       "actualWorkers": 1
     },
@@ -49,13 +49,13 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 30000
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.38.0",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -74,11 +74,11 @@
           "specs": [
             {
               "title": "Create Notebook",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 0,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -86,17 +86,41 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 5163,
+                      "error": {
+                        "message": "\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('xpath=//*[@data-id=\"XHomePanelToolbar\"]//*[@data-id=\"Z\" and text()=\"Content Library\"]')\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('xpath=//*[@data-id=\"XHomePanelToolbar\"]//*[@data-id=\"Z\" and text()=\"Content Library\"]')\u001b[22m\n\n    at Object.createNotebook (D:\\TaskCodes\\Annotate\\src\\steps\\notebook.steps.ts:7:67)\n    at D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts:24:27",
+                        "location": {
+                          "file": "D:\\TaskCodes\\Annotate\\src\\steps\\notebook.steps.ts",
+                          "column": 67,
+                          "line": 7
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\steps\\notebook.steps.ts:7\n\n\u001b[0m \u001b[90m  5 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m notebookSteps \u001b[33m=\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m  6 |\u001b[39m     createNotebook\u001b[33m:\u001b[39m \u001b[36masync\u001b[39m (page\u001b[33m:\u001b[39m \u001b[33mPage\u001b[39m\u001b[33m,\u001b[39m notebookName\u001b[33m:\u001b[39m string) \u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m         \u001b[36mawait\u001b[39m expect(contentLibraryPage\u001b[33m.\u001b[39mcontentPageToolbar(page))\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 |\u001b[39m         \u001b[36mawait\u001b[39m contentLibraryPage\u001b[33m.\u001b[39mfabButton(page)\u001b[33m.\u001b[39mclick()\u001b[0m\n\u001b[0m \u001b[90m  9 |\u001b[39m         \u001b[36mawait\u001b[39m expect(contentLibraryPage\u001b[33m.\u001b[39mcontainerFabBox(page))\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m         \u001b[36mawait\u001b[39m contentLibraryPage\u001b[33m.\u001b[39mfabNotebook(page)\u001b[33m.\u001b[39mclick()\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\TaskCodes\\Annotate\\src\\steps\\notebook.steps.ts",
+                            "column": 67,
+                            "line": 7
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('xpath=//*[@data-id=\"XHomePanelToolbar\"]//*[@data-id=\"Z\" and text()=\"Content Library\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\steps\\notebook.steps.ts:7\n\n\u001b[0m \u001b[90m  5 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m notebookSteps \u001b[33m=\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m  6 |\u001b[39m     createNotebook\u001b[33m:\u001b[39m \u001b[36masync\u001b[39m (page\u001b[33m:\u001b[39m \u001b[33mPage\u001b[39m\u001b[33m,\u001b[39m notebookName\u001b[33m:\u001b[39m string) \u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m         \u001b[36mawait\u001b[39m expect(contentLibraryPage\u001b[33m.\u001b[39mcontentPageToolbar(page))\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 |\u001b[39m         \u001b[36mawait\u001b[39m contentLibraryPage\u001b[33m.\u001b[39mfabButton(page)\u001b[33m.\u001b[39mclick()\u001b[0m\n\u001b[0m \u001b[90m  9 |\u001b[39m         \u001b[36mawait\u001b[39m expect(contentLibraryPage\u001b[33m.\u001b[39mcontainerFabBox(page))\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m         \u001b[36mawait\u001b[39m contentLibraryPage\u001b[33m.\u001b[39mfabNotebook(page)\u001b[33m.\u001b[39mclick()\u001b[0m\n\n\u001b[2m    at Object.createNotebook (D:\\TaskCodes\\Annotate\\src\\steps\\notebook.steps.ts:7:67)\u001b[22m\n\u001b[2m    at D:\\TaskCodes\\Annotate\\src\\tests\\notebook.spec.ts:24:27\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-09-27T10:56:46.285Z",
-                      "attachments": []
+                      "startTime": "2023-09-27T10:57:22.052Z",
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "D:\\TaskCodes\\Annotate\\src\\steps\\notebook.steps.ts",
+                        "column": 67,
+                        "line": 7
+                      }
                     }
                   ],
-                  "status": "skipped"
+                  "status": "unexpected"
                 }
               ],
               "id": "1f73cefbff9118457938-6151dc3b0e293b9d9c91",
@@ -110,7 +134,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 0,
+                  "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -124,7 +148,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-09-27T10:56:57.123Z",
+                      "startTime": "2023-09-27T10:57:43.379Z",
                       "attachments": []
                     }
                   ],
@@ -133,7 +157,7 @@
               ],
               "id": "1f73cefbff9118457938-01965ec701623f1bf610",
               "file": "notebook.spec.ts",
-              "line": 29,
+              "line": 30,
               "column": 7
             },
             {
@@ -142,7 +166,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 0,
+                  "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -156,7 +180,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-09-27T10:56:57.123Z",
+                      "startTime": "2023-09-27T10:57:43.379Z",
                       "attachments": []
                     }
                   ],
@@ -165,7 +189,7 @@
               ],
               "id": "1f73cefbff9118457938-0ed46151e9cb05888ef9",
               "file": "notebook.spec.ts",
-              "line": 32,
+              "line": 33,
               "column": 7
             }
           ]

@@ -4,6 +4,7 @@ import { notebookCanvaspage } from '../pages/notebookCanvas.page';
 
 export const notebookSteps ={
     createNotebook: async (page: Page, notebookName: string) =>{
+        await page.waitForTimeout(10000)
         await expect(contentLibraryPage.contentPageToolbar(page)).toBeVisible()
         await contentLibraryPage.fabButton(page).click()
         await expect(contentLibraryPage.containerFabBox(page)).toBeVisible()

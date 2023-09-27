@@ -3,8 +3,8 @@ import { Page } from "@playwright/test";
 export const contentLibraryPage = {
     contentPageToolbar: (page: Page) => page.locator('//*[@data-id="XHomePanelToolbar"]//*[@data-id="Z" and text()="Content Library"]'),
     //Notebook Card
-    notebookCardName: (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and text()=${notebookName}]`),
-    notebookCardDots:  (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and text()=${notebookName}]/following-sibling::div[1]//div[1]`),
+    notebookCardName: (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and text()="${notebookName}"]`),
+    notebookCardDots:  (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and text()="${notebookName}"]/following-sibling::div[1]//div[1]`),
     notebookCardMenu:  (page: Page) => page.locator('//*[@data-id="LessonMoreOptions"]'),
     notebookCardMenuMoreButton:  (page: Page) => page.locator('//*[@data-id="LessonMoreOptions"]//*[@data-id="XMenuItemWithForm"]//*[@data-id="Z" and text()="More"]'),
     notebookCardMoreMenu:  (page: Page) => page.locator('//*[@data-id="LessonMoreOptionForm2"]'),
