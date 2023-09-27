@@ -8,7 +8,7 @@ export const contentLibraryPage = {
     trashBackbutton: (page: Page) => page.locator('//*[@data-id="XUserDriveInfoBar"]//*[@data-id="XIconButton"]'),
     emptyTrashButton: (page: Page) => page.locator('//*[@data-id="FolderFileClipContainer"]//*[@data-id="XMenuItemWithIconAutoWidth"]//*[@data-id="Z" and text()="Empty Trash now"]'),
     trashNotebookCardDelete: (page: Page) => page.locator('//*[@data-id="TrashMoreOption"]//*[@data-id="XMenuItemWithIcon"]//*[@data-id="Z" and text()="Delete"]'),
-    trashConfirmDeleteBox: (page: Page) => page.locator('//*[@data-id="XMessageBox"]'),
+    trashConfirmDeleteBox: (page: Page) => page.locator('//*[@data-id="XMessageBox" and contains(.,"notebook will be permanently deleted.")]'),
     trashConfirmDeleteButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
     //Notebook Card
     notebookCardName: (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and @title="${notebookName}"]`),
@@ -21,7 +21,7 @@ export const contentLibraryPage = {
     fabButton: (page: Page) => page.locator('//*[@data-id="HomePanel"]//*[@data-id="MyDriveWidget"]//*[@class="widget fab" and @data-id="XFAB"]//*[@data-id="XIconButton"]//div[@data-id="XIcon"]'),
     containerFabBox: (page: Page) => page.locator('//*[@data-id="XFABContainer"]'),
     //create notebook fab
-    fabNotebook: (page: Page) => page.locator('//*[@data-id="XFABContainer"]//*[@id="1401"]//div[@class="widget label" and text()="Notebook"]'),
+    fabNotebook: (page: Page) => page.locator('//*[@data-id="XFABContainer"]//*[@id="1401"]//div[@data-id="Z" and text()="Notebook"]'),
     createbotebookDialogBox: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]'),
     createNotebookInput: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]//input[@data-id="ZInputWidget"]'),
     createNotebookButton: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]//*[@data-id="XButton" and text()="Create"]'),
