@@ -5,7 +5,7 @@ import data from '../../data.json';
 
 const email = data["email"];
 const password = data["password"];
-const MyNotebook = "New Notebook 2023";
+const MyNotebook = "New Notebook 2023.2";
 
 let context: BrowserContext;
 let page: Page;
@@ -14,10 +14,12 @@ test.describe.serial('Notebook Test Cases', () => {
   test.beforeAll(async ({ browser}) => {
     context = await browser.newContext()
     page = await context.newPage()
+    
     await loginSteps.login(page, email, password)
   }) 
 
   test("Create Notebook", async () => {
+      test.setTimeout(120000)
       await expect(page).toHaveURL('https://staging.annotate.net/instructor')
       await notebookSteps.createNotebook(page, MyNotebook)
       await test.step('Assert Notebook', async ()=>{

@@ -10,10 +10,10 @@ export const contentLibraryPage = {
     notebookCardMoreMenu:  (page: Page) => page.locator('//*[@data-id="LessonMoreOptionForm2"]'),
     notebookDeleteButton:  (page: Page) => page.locator('//*[@data-id="LessonMoreOptionForm2"]//*[@data-id="XMenuItemWithIcon"]//*[@data-id="Z" and text()="Delete"]'),
     //Fab Button
-    fabButton: (page: Page) => page.locator('//*[@data-id="HomePanel"]//*[@data-id="MyDriveWidget"]//*[@data-id="XFAB"]//*[@data-id="XIconButton"]//*[@data-id="XIcon"]'),
+    fabButton: (page: Page) => page.locator('//*[@data-id="HomePanel"]//*[@data-id="MyDriveWidget"]//*[@class="widget fab" and @data-id="XFAB"]//*[@data-id="XIconButton"]//div[@data-id="XIcon"]'),
     containerFabBox: (page: Page) => page.locator('//*[@data-id="XFABContainer"]'),
     //create notebook fab
-    fabNotebook: (page: Page) => page.locator('//*[@data-id="XFABContainer"]//*[@id="1401"]/div[2]//div[@class="widget label" and text()="Notebook"]'),
+    fabNotebook: (page: Page) => page.locator('//*[@data-id="XFABContainer"]//*[@id="1401"]//div[@class="widget label" and text()="Notebook"]'),
     createbotebookDialogBox: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]'),
     createNotebookInput: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]//input[@data-id="ZInputWidget"]'),
     createNotebookButton: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]//*[@data-id="XButton" and text()="Create"]'),
