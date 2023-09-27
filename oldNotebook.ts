@@ -6,7 +6,7 @@ export default class Notebook {
     async createNotebook(context: BrowserContext, page: Page, NotebookName: string) {
         this.page = page;
         this.context = context;
-        await this.page.locator('xpath=//div[@data-id="HomePanel"]//div[@class="widget" and @data-id="MyDriveWidget"]//div[@class="widget fab" and @data-id="XFAB"]//div[@data-id="XIconButton"]//div[@class="widget icon icon-plus" and @data-id="XIcon"]').click();
+        await this.page.locator('xpath=//div[@class="widget" and @data-id="HomePanel"]//div[@class="widget" and @data-id="MyDriveWidget"]//div[@class="widget fab" and @data-id="XFAB"]//div[@data-id="XIconButton"]//div[@class="widget icon icon-plus" and @data-id="XIcon"]').click();
         //const containerBox = this.page.locator('xpath=//div[@class="widget fab-action-container" and @data-id="XFABContainer"]')
         //expect(containerBox);
         await this.page.locator('xpath=//div[@class="widget fab-action-container"]//div[@class="widget clickable fab-action"]//div[@class="widget label" and text()="Notebook"]').click();

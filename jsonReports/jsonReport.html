@@ -74,7 +74,7 @@
           "specs": [
             {
               "title": "Create Notebook",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -86,37 +86,62 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 21807,
-                      "errors": [],
+                      "status": "timedOut",
+                      "duration": 30018,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Dilton\\Zeus\\Annotate\\src\\tests\\notebook.spec.ts",
+                            "column": 28,
+                            "line": 34
+                          },
+                          "message": "Error: expect.toHaveURL: Target page, context or browser has been closed\n\n\u001b[0m \u001b[90m 32 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Logout'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ()\u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m 33 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"'Logout'\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://staging.annotate.net/login.php'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m       })   \u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m   })\u001b[0m\n\u001b[0m \u001b[90m 37 |\u001b[39m })\u001b[0m\n\n\u001b[2m    at D:\\Dilton\\Zeus\\Annotate\\src\\tests\\notebook.spec.ts:34:28\u001b[22m\n\u001b[2m    at D:\\Dilton\\Zeus\\Annotate\\src\\tests\\notebook.spec.ts:32:7\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
                       "steps": [
                         {
                           "title": "Create Notebook",
-                          "duration": 18841
+                          "duration": 27169
                         },
                         {
                           "title": "Exit Notebook",
-                          "duration": 12,
+                          "duration": 250,
                           "steps": [
                             {
                               "title": "Exit Notebook",
-                              "duration": 10
+                              "duration": 13
                             }
                           ]
                         },
                         {
                           "title": "Logout",
-                          "duration": 2911
+                          "duration": 2894,
+                          "error": {
+                            "message": "expect.toHaveURL: Target page, context or browser has been closed",
+                            "stack": "Error: expect.toHaveURL: Target page, context or browser has been closed\n    at D:\\Dilton\\Zeus\\Annotate\\src\\tests\\notebook.spec.ts:34:28\n    at D:\\Dilton\\Zeus\\Annotate\\src\\tests\\notebook.spec.ts:32:7",
+                            "location": {
+                              "file": "D:\\Dilton\\Zeus\\Annotate\\src\\tests\\notebook.spec.ts",
+                              "column": 28,
+                              "line": 34
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 32 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m'Logout'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ()\u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m 33 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m\"'Logout'\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://staging.annotate.net/login.php'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m       })   \u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m   })\u001b[0m\n\u001b[0m \u001b[90m 37 |\u001b[39m })\u001b[0m"
+                          }
                         }
                       ],
-                      "startTime": "2023-09-26T12:01:11.128Z",
+                      "startTime": "2023-09-26T12:45:37.238Z",
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "1f73cefbff9118457938-6151dc3b0e293b9d9c91",

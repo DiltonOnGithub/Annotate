@@ -6,7 +6,7 @@ import {notebookSteps} from '../steps/notebook.steps'
 
 const email = data["email"];
 const password = data["password"];
-const MyNotebook = "Dilton123456";
+const MyNotebook = "Dilton1234567y5";
 
 let context: BrowserContext;
 let page: Page;
@@ -19,7 +19,7 @@ test.describe.serial('Notebook Test Cases', () => {
     context = await browser.newContext()
     page = await context.newPage()
     await login.login(context, page, email, password)
-  })
+  }) 
 
   test("Create Notebook", async () => {
       await expect(page).toHaveURL('https://staging.annotate.net/instructor');
