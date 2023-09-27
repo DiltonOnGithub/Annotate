@@ -1,6 +1,6 @@
 import {test, expect, BrowserContext,Page } from '@playwright/test';
 import LoginPage from "../pages/login"
-import notebook from '../pages/Notebook';
+import { contentLibraryPage } from '../pages/contentLibrary.page';
 import data from '../../data.json';
 import {notebookSteps} from '../steps/notebook.steps'
 
