@@ -5,7 +5,7 @@ import data from '../../data.json';
 
 const email = data["email"];
 const password = data["password"];
-const MyNotebook = "New Notebook 2023.10";
+const MyNotebook = "New Notebook 2023.11";
 
 let context: BrowserContext;
 let page: Page;
@@ -29,10 +29,10 @@ test.describe.serial('Notebook Test Cases', () => {
   })
   test("Delete Notebook", async () => {
     await expect(page).toHaveURL('https://staging.annotate.net/instructor')
-    await notebookSteps.softDeleteNotebook(page, 'New Notebook 2023.8')
+    await notebookSteps.softDeleteNotebook(page, 'New Notebook 2023.11')
     await test.step('Delete Notebook From Trash', async ()=>{
       await notebookSteps.openTrash(page)
-      await notebookSteps.hardDeleteNotebook(page, 'New Notebook 2023.8')
+      await notebookSteps.hardDeleteNotebook(page, 'New Notebook 2023.11')
     })
   })
   test("Empty Trash", async () => {
