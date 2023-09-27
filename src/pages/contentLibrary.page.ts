@@ -6,6 +6,7 @@ export const contentLibraryPage = {
     trashButton: (page: Page) => page.locator('//*[@data-id="SubFolderContainer"]//*[@data-id="XSubFolderItem"]//*[@data-id="name" and text()="Trash"]'),
     trashTitle: (page: Page) => page.locator('//*[@data-id="XUserDriveInfoBar"]//*[@data-id="ZWidgetClickable" and text()="Trash"]'),
     trashBackbutton: (page: Page) => page.locator('//*[@data-id="XUserDriveInfoBar"]//*[@data-id="XIconButton"]'),
+    emptyTrashButton: (page: Page) => page.locator('//*[@data-id="FolderFileClipContainer"]//*[@data-id="XMenuItemWithIconAutoWidth"]//*[@data-id="Z" and text()="Empty Trash now"]'),
     trashNotebookCardDelete: (page: Page) => page.locator('//*[@data-id="TrashMoreOption"]//*[@data-id="XMenuItemWithIcon"]//*[@data-id="Z" and text()="Delete"]'),
     trashConfirmDeleteBox: (page: Page) => page.locator('//*[@data-id="XMessageBox"]'),
     trashConfirmDeleteButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
