@@ -13,5 +13,6 @@ export const loginSteps ={
         if(await page.isVisible("text='You seem to be already logged in '")){
             await page.getByRole('button', { name: 'Yes' }).click()
         }
+        await expect(page).toHaveURL('https://staging.annotate.net/instructor')
     },
 }

@@ -4,11 +4,15 @@ export const contentLibraryPage = {
     contentPageToolbar: (page: Page) => page.locator('//*[@data-id="XHomePanelToolbar"]//*[@data-id="Z" and text()="Content Library"]'),
     //trash Button
     trashButton: (page: Page) => page.locator('//*[@data-id="SubFolderContainer"]//*[@data-id="XSubFolderItem"]//*[@data-id="name" and text()="Trash"]'),
+    trashItemNumber: (page: Page) => page.locator('//*[@data-id="SubFolderContainer"]//*[@data-id="XSubFolderItem"]//*[@data-id="SubfolderItemGridView"]//*[@data-id="Z" and contains(.,"items")]'),
     trashTitle: (page: Page) => page.locator('//*[@data-id="XUserDriveInfoBar"]//*[@data-id="ZWidgetClickable" and text()="Trash"]'),
     trashBackbutton: (page: Page) => page.locator('//*[@data-id="XUserDriveInfoBar"]//*[@data-id="XIconButton"]'),
     emptyTrashButton: (page: Page) => page.locator('//*[@data-id="FolderFileClipContainer"]//*[@data-id="XMenuItemWithIconAutoWidth"]//*[@data-id="Z" and text()="Empty Trash now"]'),
+    trashNotebookCardRestore: (page: Page) => page.locator('//*[@data-id="TrashMoreOption"]//*[@data-id="XMenuItemWithIcon"]//*[@data-id="Z" and text()="Restore"]'),
     trashNotebookCardDelete: (page: Page) => page.locator('//*[@data-id="TrashMoreOption"]//*[@data-id="XMenuItemWithIcon"]//*[@data-id="Z" and text()="Delete"]'),
+    trashConfirmRestoreBox: (page: Page) => page.locator('//*[@data-id="XMessageBox" and contains(.,"Restore Content")]'),
     trashConfirmDeleteBox: (page: Page) => page.locator('//*[@data-id="XMessageBox" and contains(.,"notebook will be permanently deleted.")]'),
+    trashConfirmRestoreButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Restore" and text()="Restore"]'),
     trashConfirmDeleteButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
     //Notebook Card
     notebookCardName: (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and @title="${notebookName}"]`),
