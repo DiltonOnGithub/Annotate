@@ -12,8 +12,10 @@ export const contentLibraryPage = {
     trashNotebookCardDelete: (page: Page) => page.locator('//*[@data-id="TrashMoreOption"]//*[@data-id="XMenuItemWithIcon"]//*[@data-id="Z" and text()="Delete"]'),
     trashConfirmRestoreBox: (page: Page) => page.locator('//*[@data-id="XMessageBox" and contains(.,"Restore Content")]'),
     trashConfirmDeleteBox: (page: Page) => page.locator('//*[@data-id="XMessageBox" and contains(.,"notebook will be permanently deleted.")]'),
+    emptyTrashConfirmDeleteBox: (page: Page) => page.locator('//*[@data-id="XMessageBox" and contains(.,"All the items will be deleted permanently")]'),
     trashConfirmRestoreButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Restore" and text()="Restore"]'),
     trashConfirmDeleteButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
+    emptytrashConfirmDeleteButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
     //Notebook Card
     notebookCardName: (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and @title="${notebookName}"]`),
     notebookCardDots:  (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and @title="${notebookName}"]/following-sibling::div[1]//div[1]`),

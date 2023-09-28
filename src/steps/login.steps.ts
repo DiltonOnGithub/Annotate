@@ -14,5 +14,6 @@ export const loginSteps ={
             await page.getByRole('button', { name: 'Yes' }).click()
         }
         await expect(page).toHaveURL('https://staging.annotate.net/instructor')
+        await page.waitForTimeout(10000)
     },
 }
