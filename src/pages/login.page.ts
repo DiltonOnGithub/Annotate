@@ -8,6 +8,9 @@ export const loginPage = {
     emailInput: (page: Page) => page.locator('#txtUsername'),
     passwordInput: (page: Page) => page.locator('#txtPassword'),
     rememberMeCheck: (page: Page) => page.getByLabel('Remember me'),
-    backArrowButton: (page: Page) => page.locator('//*[@data-id="XNotebookToolbar"]//*[@id="201"]//div[@data-id="XIcon"]'),
     loginButton: (page: Page) => page.getByRole('button', { name: 'Login' }),
+    sessionCheck: (page: Page) => page.getByText('You seem to be already logged in '),
+    sessionCheckButton: (page: Page) => page.getByRole('button', { name: 'Yes' }),
+    dashboardloader: (page: Page) => page.getByText('Loading resources...')
+
 }

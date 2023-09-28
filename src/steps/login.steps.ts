@@ -10,10 +10,13 @@ export const loginSteps ={
         await loginPage.passwordInput(page).fill(password)
         await loginPage.rememberMeCheck(page).check()
         await loginPage.loginButton(page).click()
-        if(await page.isVisible("text='You seem to be already logged in '")){
-            await page.getByRole('button', { name: 'Yes' }).click()
+        if(await loginPage.sessionCheck(page).isVisible()){
+            await loginPage.sessionCheckButton(page).click()
         }
         await expect(page).toHaveURL('https://staging.annotate.net/instructor')
-        await page.waitForTimeout(10000)
+        //await page.waitForTimeout(10000)
+         
+        //await expect(loginPage.dashboardloader(page)).toBeVisible()
+        await loginPage.dashboardloader(page).waitFor({state: "hidden"})
     },
 }
