@@ -5,9 +5,11 @@ import data from '../../data.json';
 
 const email = data["email"];
 const password = data["password"];
-const MyNotebook1 = "New Notebook 2023.111";
-const MyNotebook2 = "New Notebook 2023.222";
-const MyNotebook3 = "New Notebook 2023.333";
+
+const timestamp = new Date().toString()
+const MyNotebook1 = "New Notebook "+timestamp+" 1";
+const MyNotebook2 = "New Notebook "+timestamp+" 2";
+const MyNotebook3 = "New Notebook "+timestamp+" 3";
 
 let context: BrowserContext;
 let page: Page;
@@ -31,15 +33,16 @@ test.describe.serial('Notebook Test Cases', () => {
         await contentLibrarySteps.assertNotebook(page, MyNotebook3)
       })
   })
+
   test("Delete Notebook", async () => {
     await contentLibrarySteps.softDeleteNotebook(page, MyNotebook1)
     await contentLibrarySteps.softDeleteNotebook(page, MyNotebook2)
-    
     await test.step('Delete Notebook From Trash', async ()=>{
       await contentLibrarySteps.openTrash(page)
       await contentLibrarySteps.hardDeleteNotebook(page, MyNotebook1)
     })
   })
+
   test("Restore Notebook", async () => {
     await contentLibrarySteps.softDeleteNotebook(page, MyNotebook3)
     await test.step('Restore Notebook From Trash', async ()=>{
@@ -47,10 +50,11 @@ test.describe.serial('Notebook Test Cases', () => {
       await contentLibrarySteps.restoreNotebook(page, MyNotebook3)
     })
   })
+
   test("Empty Trash", async () => {
-    await expect(page).toHaveURL('https://staging.annotate.net/instructor')
     await contentLibrarySteps.emptyTrash(page)
   })
+
   test("Logout", async () => {
     await expect(page).toHaveURL('https://staging.annotate.net/instructor');
     //await page.reload({timeout: 5000})

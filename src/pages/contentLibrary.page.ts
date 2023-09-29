@@ -1,6 +1,7 @@
 import { Page } from "@playwright/test";
 
 export const contentLibraryPage = {
+    contentPageLoader: (page: Page) => page.getByText('Loading Data...'),
     contentPageToolbar: (page: Page) => page.locator('//*[@data-id="XHomePanelToolbar"]//*[@data-id="Z" and text()="Content Library"]'),
     //trash Button
     trashButton: (page: Page) => page.locator('//*[@data-id="SubFolderContainer"]//*[@data-id="XSubFolderItem"]//*[@data-id="name" and text()="Trash"]'),
@@ -16,6 +17,9 @@ export const contentLibraryPage = {
     trashConfirmRestoreButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Restore" and text()="Restore"]'),
     trashConfirmDeleteButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
     emptytrashConfirmDeleteButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
+    trashDeletingLoader: (page: Page) => page.getByText('Deleting Selected Items'),
+    trashRestoreloader: (page: Page) => page.getByText('Restoring files'),
+    trashEmptyDeletingloader: (page: Page) => page.getByText('Deleting All Items'),
     //Notebook Card
     notebookCardName: (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and @title="${notebookName}"]`),
     notebookCardDots:  (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="Z"]//*[@data-id="name" and @title="${notebookName}"]/following-sibling::div[1]//div[1]`),
@@ -31,4 +35,7 @@ export const contentLibraryPage = {
     createbotebookDialogBox: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]'),
     createNotebookInput: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]//input[@data-id="ZInputWidget"]'),
     createNotebookButton: (page: Page) => page.locator('//*[@data-id="NewNotebookDialog"]//*[@data-id="XButton" and text()="Create"]'),
+    notebookLoader1: (page: Page) => page.getByText('Creating notebook...'),
+    notebookLoader2: (page: Page) => page.getByText('Loading Notebook...'),
+    notebookLoader3: (page: Page) => page.getByText('Parsing Notebook...'),
 }

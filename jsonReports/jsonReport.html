@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "D:\\Dilton\\Zeus\\Annotate\\playwright.config.ts",
-    "rootDir": "D:/Dilton/Zeus/Annotate/src/tests",
+    "configFile": "D:\\TaskCodes\\Annotate\\playwright.config.ts",
+    "rootDir": "D:/TaskCodes/Annotate/src/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 0,
+    "maxFailures": 1,
     "metadata": {
       "actualWorkers": 1
     },
@@ -39,23 +39,23 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "D:/Dilton/Zeus/Annotate/test-results",
+        "outputDir": "D:/TaskCodes/Annotate/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/Dilton/Zeus/Annotate/src/tests",
+        "testDir": "D:/TaskCodes/Annotate/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 0
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.38.0",
-    "workers": 2,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -69,7 +69,7 @@
         {
           "title": "Notebook Test Cases",
           "file": "notebook.spec.ts",
-          "line": 15,
+          "line": 17,
           "column": 15,
           "specs": [
             {
@@ -78,7 +78,7 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
+                  "timeout": 0,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -87,7 +87,7 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 31115,
+                      "duration": 25760,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -95,10 +95,10 @@
                       "steps": [
                         {
                           "title": "Assert Notebook",
-                          "duration": 36
+                          "duration": 111
                         }
                       ],
-                      "startTime": "2023-09-28T14:56:02.302Z",
+                      "startTime": "2023-09-29T07:39:54.959Z",
                       "attachments": []
                     }
                   ],
@@ -107,16 +107,16 @@
               ],
               "id": "1f73cefbff9118457938-6151dc3b0e293b9d9c91",
               "file": "notebook.spec.ts",
-              "line": 22,
+              "line": 24,
               "column": 7
             },
             {
               "title": "Delete Notebook",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 0,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -124,37 +124,32 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30009,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
+                      "status": "passed",
+                      "duration": 12497,
+                      "errors": [],
+                      "stdout": [
                         {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "D:\\Dilton\\Zeus\\Annotate\\src\\steps\\contentLibrary.steps.ts",
-                            "column": 65,
-                            "line": 37
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('xpath=//*[@data-id=\"LessonMoreOptions\"]')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\steps\\contentLibrary.steps.ts:37\n\n\u001b[0m \u001b[90m 35 |\u001b[39m         \u001b[36mawait\u001b[39m contentLibrarySteps\u001b[33m.\u001b[39massertNotebook(page\u001b[33m,\u001b[39m notebookName)\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m         \u001b[36mawait\u001b[39m contentLibraryPage\u001b[33m.\u001b[39mnotebookCardDots(page\u001b[33m,\u001b[39m notebookName)\u001b[33m.\u001b[39mclick()\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m         \u001b[36mawait\u001b[39m expect(contentLibraryPage\u001b[33m.\u001b[39mnotebookCardMenu(page))\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 38 |\u001b[39m         \u001b[36mawait\u001b[39m contentLibraryPage\u001b[33m.\u001b[39mnotebookCardMenuMoreButton(page)\u001b[33m.\u001b[39mclick()\u001b[0m\n\u001b[0m \u001b[90m 39 |\u001b[39m         \u001b[36mawait\u001b[39m expect(contentLibraryPage\u001b[33m.\u001b[39mnotebookCardMoreMenu(page))\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m 40 |\u001b[39m         \u001b[36mawait\u001b[39m contentLibraryPage\u001b[33m.\u001b[39mnotebookDeleteButton(page)\u001b[33m.\u001b[39mclick()\u001b[0m\n\n\u001b[2m    at Object.softDeleteNotebook (D:\\Dilton\\Zeus\\Annotate\\src\\steps\\contentLibrary.steps.ts:37:65)\u001b[22m\n\u001b[2m    at D:\\Dilton\\Zeus\\Annotate\\src\\tests\\notebook.spec.ts:37:5\u001b[22m"
+                          "text": "Number of items: 4\n"
                         }
                       ],
-                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-09-28T14:56:53.129Z",
+                      "steps": [
+                        {
+                          "title": "Delete Notebook From Trash",
+                          "duration": 5635
+                        }
+                      ],
+                      "startTime": "2023-09-29T07:40:51.555Z",
                       "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "1f73cefbff9118457938-01965ec701623f1bf610",
               "file": "notebook.spec.ts",
-              "line": 34,
+              "line": 37,
               "column": 7
             },
             {
@@ -163,30 +158,46 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 0,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 9198,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Number of items: 4\n"
+                        },
+                        {
+                          "text": "Number of items: 3\n"
+                        },
+                        {
+                          "text": "Called restore:\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-09-28T14:57:23.652Z",
+                      "steps": [
+                        {
+                          "title": "Restore Notebook From Trash",
+                          "duration": 5751
+                        }
+                      ],
+                      "startTime": "2023-09-29T07:41:04.055Z",
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "1f73cefbff9118457938-c6401705b5d9de28c277",
               "file": "notebook.spec.ts",
-              "line": 44,
+              "line": 46,
               "column": 7
             },
             {
@@ -195,30 +206,40 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 0,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 4563,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Number of items: 3\n"
+                        },
+                        {
+                          "text": "Number of items: 0\n"
+                        },
+                        {
+                          "text": "Called empty trash:\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-09-28T14:57:23.653Z",
+                      "startTime": "2023-09-29T07:41:13.257Z",
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "1f73cefbff9118457938-beda5bc95576c9c0fe23",
               "file": "notebook.spec.ts",
-              "line": 51,
+              "line": 54,
               "column": 7
             },
             {
@@ -227,30 +248,30 @@
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 0,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1581,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-09-28T14:57:23.653Z",
+                      "startTime": "2023-09-29T07:41:17.822Z",
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "1f73cefbff9118457938-0ed46151e9cb05888ef9",
               "file": "notebook.spec.ts",
-              "line": 55,
+              "line": 58,
               "column": 7
             }
           ]

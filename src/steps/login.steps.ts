@@ -17,6 +17,7 @@ export const loginSteps ={
         //await page.waitForTimeout(10000)
          
         //await expect(loginPage.dashboardloader(page)).toBeVisible()
+        await loginPage.dashboardloader(page).waitFor({state: "visible"})
         await loginPage.dashboardloader(page).waitFor({state: "hidden"})
     },
 }

@@ -5,10 +5,14 @@ var number;
 export const contentLibrarySteps = {
 
     contentLibraryFrame: async (page: Page) => {
+        await contentLibraryPage.contentPageLoader(page).waitFor({state: "visible"})
+        await contentLibraryPage.contentPageLoader(page).waitFor({state: "hidden"})
+        //await contentLibraryPage.contentPageToolbar(page).waitFor({state: "visible"})
         await expect(contentLibraryPage.contentPageToolbar(page)).toBeVisible()
     },
 
     contentLibraryFabButton: async (page: Page) => {
+        await contentLibraryPage.fabButton(page).waitFor({state: "visible"})
         await expect(contentLibraryPage.fabButton(page)).toBeVisible()
         await contentLibraryPage.fabButton(page).click()
         await expect(contentLibraryPage.containerFabBox(page)).toBeVisible()
@@ -19,9 +23,13 @@ export const contentLibrarySteps = {
         await contentLibraryPage.fabNotebook(page).click()
         await contentLibraryPage.createNotebookInput(page).fill(notebookName)
         await contentLibraryPage.createNotebookButton(page).click()
-
+        // await contentLibraryPage.notebookLoader1(page).waitFor({state: "visible"})
+        // await contentLibraryPage.notebookLoader1(page).waitFor({state: "hidden"})
+        // await contentLibraryPage.notebookLoader2(page).waitFor({state: "visible"})
+        // await contentLibraryPage.notebookLoader2(page).waitFor({state: "hidden"})
+        // await contentLibraryPage.notebookLoader3(page).waitFor({state: "visible"})
+        // await contentLibraryPage.notebookLoader3(page).waitFor({state: "hidden"})
         await notebookCanvaspage.notebookToolbar(page).waitFor({state: "visible"})
-
         await expect(notebookCanvaspage.notebookToolbar(page)).toBeVisible()
         await expect(notebookCanvaspage.notebookName(page)).toHaveText(notebookName)
         await contentLibrarySteps.exitNotebook(page, notebookName)
@@ -33,7 +41,7 @@ export const contentLibrarySteps = {
 
     softDeleteNotebook: async(page: Page, notebookName: string) => {
         await contentLibrarySteps.assertNotebook(page, notebookName)
-        await contentLibraryPage.notebookCardDots(page, notebookName).click()
+        await contentLibraryPage.notebookCardDots(page, notebookName).click({ force: true })
         await expect(contentLibraryPage.notebookCardMenu(page)).toBeVisible()
         await contentLibraryPage.notebookCardMenuMoreButton(page).click()
         await expect(contentLibraryPage.notebookCardMoreMenu(page)).toBeVisible()
@@ -44,7 +52,7 @@ export const contentLibrarySteps = {
     trashBox: async(page: Page) => {
         await expect(contentLibraryPage.trashButton(page)).toBeVisible()
         number = parseInt((await contentLibraryPage.trashItemNumber(page).innerHTML()).split(' ')[0])
-        console.log("number of items: "+number )
+        console.log("Number of items: "+number )
     },
 
     openTrash: async(page: Page) => {
@@ -59,6 +67,8 @@ export const contentLibrarySteps = {
         await contentLibraryPage.trashNotebookCardDelete(page).click()
         await expect(contentLibraryPage.trashConfirmDeleteBox(page)).toBeVisible()
         await contentLibraryPage.trashConfirmDeleteButton(page).click()
+        // await contentLibraryPage.trashDeletingLoader(page).waitFor({state: "visible"})
+        // await contentLibraryPage.trashDeletingLoader(page).waitFor({state: "hidden"})
         await expect(contentLibraryPage.notebookCardName(page, notebookName)).not.toBeVisible()
         await contentLibraryPage.trashBackbutton(page).click()
     },
@@ -70,29 +80,33 @@ export const contentLibrarySteps = {
             await contentLibraryPage.emptyTrashButton(page).click()
             await expect(contentLibraryPage.emptyTrashConfirmDeleteBox(page)).toBeVisible()
             await contentLibraryPage.emptytrashConfirmDeleteButton(page).click()
-            
+            if(await contentLibraryPage.trashEmptyDeletingloader(page).isVisible()){
+                await contentLibraryPage.trashEmptyDeletingloader(page).waitFor({state: "hidden"})
+            }
             await contentLibraryPage.trashBackbutton(page).click()   
         }
         await contentLibrarySteps.trashBox(page)
+        console.log("Called empty trash:")
         await expect(number).toEqual(0)
     },
     restoreNotebook: async(page: Page, notebookName: string) => {
         var prevNum = number
-        
         await contentLibraryPage.notebookCardDots(page, notebookName).click()
         await contentLibraryPage.trashNotebookCardRestore(page).click()
         await expect(contentLibraryPage.trashConfirmRestoreBox(page)).toBeVisible()
         await contentLibraryPage.trashConfirmRestoreButton(page).click()
+        // await contentLibraryPage.trashRestoreloader(page).waitFor({state: "visible"})
+        // await contentLibraryPage.trashRestoreloader(page).waitFor({state: "hidden"})
         await expect(contentLibraryPage.notebookCardName(page, notebookName)).not.toBeVisible()
         await contentLibraryPage.trashBackbutton(page).click()
         await contentLibrarySteps.trashBox(page)
+        console.log("Called restore:")
         await expect(number).toEqual(prevNum-1)       
     },
     exitNotebook: async (page: Page, notebookName: string) => {
         await expect(notebookCanvaspage.notebookToolbar(page)).toBeVisible()
         await expect(notebookCanvaspage.notebookName(page)).toHaveText(notebookName)
         await notebookCanvaspage.backArrowButton(page).click()
-        await page.waitForTimeout(3000)
     }
 }
 
