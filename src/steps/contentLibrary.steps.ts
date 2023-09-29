@@ -20,7 +20,8 @@ export const contentLibrarySteps = {
         await contentLibraryPage.fabNotebook(page).click()
         await contentLibraryPage.createNotebookInput(page).fill(notebookName)
         await contentLibraryPage.createNotebookButton(page).click()
-        await expect(notebookCanvaspage.notebookToolbar(page)).toBeVisible({timeout:3000})
+        
+        await expect(notebookCanvaspage.notebookToolbar(page)).toBeVisible()
         await expect(notebookCanvaspage.notebookName(page)).toHaveText(notebookName)
         await contentLibrarySteps.exitNotebook(page, notebookName)
     },

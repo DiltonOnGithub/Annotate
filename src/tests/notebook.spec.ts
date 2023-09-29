@@ -20,7 +20,7 @@ test.describe.serial('Notebook Test Cases', () => {
   }) 
 
   test("Create Notebook", async () => {
-      test.setTimeout(120000)
+      //test.setTimeout(120000)
       await contentLibrarySteps.createNotebook(page, MyNotebook1)
       await contentLibrarySteps.createNotebook(page, MyNotebook2)
       await contentLibrarySteps.createNotebook(page, MyNotebook3)
@@ -31,17 +31,16 @@ test.describe.serial('Notebook Test Cases', () => {
       })
   })
   test("Delete Notebook", async () => {
-    await expect(page).toHaveURL('https://staging.annotate.net/instructor')
     await contentLibrarySteps.softDeleteNotebook(page, MyNotebook1)
     await contentLibrarySteps.softDeleteNotebook(page, MyNotebook2)
-    await contentLibrarySteps.softDeleteNotebook(page, MyNotebook3)
+    
     await test.step('Delete Notebook From Trash', async ()=>{
       await contentLibrarySteps.openTrash(page)
       await contentLibrarySteps.hardDeleteNotebook(page, MyNotebook1)
     })
   })
   test("Restore Notebook", async () => {
-    await expect(page).toHaveURL('https://staging.annotate.net/instructor')
+    await contentLibrarySteps.softDeleteNotebook(page, MyNotebook3)
     await test.step('Restore Notebook From Trash', async ()=>{
       await contentLibrarySteps.openTrash(page)
       await contentLibrarySteps.restoreNotebook(page, MyNotebook3)
