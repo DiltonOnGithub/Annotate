@@ -16,8 +16,9 @@ export const loginSteps ={
         await expect(page).toHaveURL('https://staging.annotate.net/instructor')
         //await page.waitForTimeout(10000)
          
-        //await expect(loginPage.dashboardloader(page)).toBeVisible()
-        await loginPage.dashboardloader(page).waitFor({state: "visible"})
-        await loginPage.dashboardloader(page).waitFor({state: "hidden"})
+        await expect(loginPage.dashboardloader(page)).toBeVisible({timeout:20000})
+        await expect(loginPage.dashboardloader(page)).toBeHidden()
+        //await loginPage.dashboardloader(page).waitFor({state: "visible"})
+        // await loginPage.dashboardloader(page).waitFor({state: "hidden"})
     },
 }

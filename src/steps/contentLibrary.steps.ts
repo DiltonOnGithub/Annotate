@@ -91,7 +91,7 @@ export const contentLibrarySteps = {
     },
     restoreNotebook: async(page: Page, notebookName: string) => {
         var prevNum = number
-        await contentLibraryPage.notebookCardDots(page, notebookName).click()
+        await contentLibraryPage.notebookCardDots(page, notebookName).click({ force: true })
         await contentLibraryPage.trashNotebookCardRestore(page).click()
         await expect(contentLibraryPage.trashConfirmRestoreBox(page)).toBeVisible()
         await contentLibraryPage.trashConfirmRestoreButton(page).click()
