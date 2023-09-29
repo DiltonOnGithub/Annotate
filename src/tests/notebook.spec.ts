@@ -5,9 +5,9 @@ import data from '../../data.json';
 
 const email = data["email"];
 const password = data["password"];
-const MyNotebook1 = "New Notebook 2023.8";
-const MyNotebook2 = "New Notebook 2023.9";
-const MyNotebook3 = "New Notebook 2023.10";
+const MyNotebook1 = "New Notebook 2023.111";
+const MyNotebook2 = "New Notebook 2023.222";
+const MyNotebook3 = "New Notebook 2023.333";
 
 let context: BrowserContext;
 let page: Page;
@@ -20,7 +20,8 @@ test.describe.serial('Notebook Test Cases', () => {
   }) 
 
   test("Create Notebook", async () => {
-      //test.setTimeout(120000)
+      test.setTimeout(120000)
+      await contentLibrarySteps.contentLibraryFrame(page)
       await contentLibrarySteps.createNotebook(page, MyNotebook1)
       await contentLibrarySteps.createNotebook(page, MyNotebook2)
       await contentLibrarySteps.createNotebook(page, MyNotebook3)
