@@ -68,7 +68,7 @@ test.describe.serial('Notebook Test Cases', () => {
   })
 
   test("Student enroll to Course", async () => {
-    await courseClassesSteps.createCourse(page, "NewCourse")
+    await courseClassesSteps.enrollToCourse(page, "NewCourse")
   })
 
   test("Logout", async () => {
