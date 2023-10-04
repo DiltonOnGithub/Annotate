@@ -2,9 +2,13 @@ import {test, expect, BrowserContext,Page } from '@playwright/test';
 import { contentLibrarySteps } from '../steps/contentLibrary.steps'
 import { loginSteps } from '../steps/login.steps';
 import data from '../../data.json';
+import { courseClassesSteps } from '../steps/courseClasses.steps';
 
 const email = data["email"];
 const password = data["password"];
+
+const studentEmail = "ben123";
+const studentPassword = "Password1";
 
 const timestamp = new Date().toString()
 const MyNotebook1 = "New Notebook "+timestamp+" 1";
@@ -13,12 +17,17 @@ const MyNotebook3 = "New Notebook "+timestamp+" 3";
 
 let context: BrowserContext;
 let page: Page;
+let studentContext: BrowserContext;
+let studentPage: Page;
 
 test.describe.serial('Notebook Test Cases', () => {
   test.beforeAll(async ({ browser}) => {
     context = await browser.newContext()
     page = await context.newPage()
+    studentContext = await browser.newContext()
+    studentPage = await context.newPage()
     await loginSteps.login(page, email, password)
+    await loginSteps.login(studentPage, studentEmail, studentPassword)
   }) 
 
   test("Create Notebook", async () => {
@@ -53,6 +62,13 @@ test.describe.serial('Notebook Test Cases', () => {
 
   test("Empty Trash", async () => {
     await contentLibrarySteps.emptyTrash(page)
+  })
+  test("Create Course", async () => {
+    await courseClassesSteps.createCourse(page, "NewCourse")
+  })
+
+  test("Student enroll to Course", async () => {
+    await courseClassesSteps.createCourse(page, "NewCourse")
   })
 
   test("Logout", async () => {
