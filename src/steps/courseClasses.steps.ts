@@ -6,9 +6,11 @@ export const courseClassesSteps = {
         await courseClassesPage.courseContenPageButton(page).click()
         await courseClassesPage.fabButton(page).click()
         await courseClassesPage.createCourseFabButton(page).click()
+        //await courseClassesPage.createCourseInput(page).click({ force: true })
         await courseClassesPage.createCourseInput(page).fill(courseName)
         await courseClassesPage.createCourseButton(page).click()
         code = await courseClassesPage.courseCode(page).innerHTML()
+        await courseClassesPage.backButton(page).click()
         return code
     },
     enrollToCourse: async (page: Page, courseCode: string) => {

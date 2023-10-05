@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 1,
+    "maxFailures": 0,
     "metadata": {
       "actualWorkers": 1
     },
@@ -49,13 +49,13 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 30000
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.38.0",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -69,16 +69,16 @@
         {
           "title": "Notebook Test Cases",
           "file": "notebook.spec.ts",
-          "line": 23,
+          "line": 24,
           "column": 15,
           "specs": [
             {
-              "title": "Logout",
+              "title": "Instructor Create Course",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 0,
+                  "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -87,12 +87,108 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 3630,
+                      "duration": 9210,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-05T05:25:47.017Z",
+                      "startTime": "2023-10-05T08:38:13.491Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1f73cefbff9118457938-d1d507824a6b03d0d62a",
+              "file": "notebook.spec.ts",
+              "line": 67,
+              "column": 7
+            },
+            {
+              "title": "Student Enroll to Course",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 26128,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-05T08:38:44.010Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1f73cefbff9118457938-63825a0935457b4cf800",
+              "file": "notebook.spec.ts",
+              "line": 73,
+              "column": 7
+            },
+            {
+              "title": "Instructor accept Student",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 2242,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-05T08:39:10.141Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1f73cefbff9118457938-13f3e1d7fb2988b1b81b",
+              "file": "notebook.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "Logout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 3234,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-05T08:39:12.386Z",
                       "attachments": []
                     }
                   ],
@@ -101,7 +197,7 @@
               ],
               "id": "1f73cefbff9118457938-0ed46151e9cb05888ef9",
               "file": "notebook.spec.ts",
-              "line": 74,
+              "line": 82,
               "column": 7
             }
           ]

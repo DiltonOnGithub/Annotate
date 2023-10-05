@@ -11,7 +11,7 @@ const studentName = "Ben Chang";
 const studentEmail = "ben123";
 const studentPassword = "Password1";
 
-const timestamp = new Date().toString()
+const timestamp = new Date().getTime().toString()
 const MyNotebook1 = "New Notebook "+timestamp+" 1";
 const MyNotebook2 = "New Notebook "+timestamp+" 2";
 const MyNotebook3 = "New Notebook "+timestamp+" 3";
@@ -28,7 +28,6 @@ test.describe.serial('Notebook Test Cases', () => {
     studentContext = await browser.newContext()
     studentPage = await studentContext.newPage()
     await loginSteps.login(instructorPage, email, password)
-    await loginSteps.login(studentPage, studentEmail, studentPassword)
   }) 
 
   // test("Create Notebook", async () => {
@@ -64,12 +63,15 @@ test.describe.serial('Notebook Test Cases', () => {
   // test("Empty Trash", async () => {
   //   await contentLibrarySteps.emptyTrash(page)
   // })
-  
+
   test("Instructor Create Course", async () => {
+    
+    
     code = await courseClassesSteps.createCourse(instructorPage, timestamp)
     
   })
   test("Student Enroll to Course", async () => {
+    await loginSteps.login(studentPage, studentEmail, studentPassword)
     await courseClassesSteps.enrollToCourse(studentPage, code)
     
   })
