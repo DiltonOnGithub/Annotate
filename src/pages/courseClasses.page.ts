@@ -12,6 +12,7 @@ export const courseClassesPage = {
     //Course card
     courseCard: (page: Page, courseName: string) => page.locator(`//*[@data-id="CourseItem" and contains(.,"${courseName}")]`),
     courseCardRoster:  (page: Page, courseName: string) => page.locator(`//*[@data-id="CourseItem" and contains(.,"${courseName}")]//*[@data-id="XUpdateIconButton" and @title="Roster"]//*[@data-id="XIcon"]`),
+    studentBar: (page: Page, studentName: string) => page.locator(`//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]`),
     acceptStudentButton: (page: Page, studentName: string) => page.locator(`//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]//*[@data-id="XButton" and text()="Accept"]`),
 
     backButton: (page: Page) => page.locator('//*[@data-id="XHomePanelToolbar"]//*[@data-id="HamburgerMenu"]'),

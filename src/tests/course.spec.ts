@@ -40,6 +40,7 @@ test.describe.serial('Course Test Cases', () => {
     await test.step('Instructor accept student to course', async() =>{
         await expect(courseClassesPage.courseCard(instructorPage, courseName)).toBeVisible()
         await courseClassesSteps.acceptStudent(instructorPage, courseName, studentName)
+        await expect(courseClassesPage.studentBar(instructorPage, studentName)).toBeVisible()
     })
   })
 
