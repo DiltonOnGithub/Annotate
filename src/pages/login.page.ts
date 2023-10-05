@@ -11,6 +11,7 @@ export const loginPage = {
     loginButton: (page: Page) => page.getByRole('button', { name: 'Login' }),
     sessionCheck: (page: Page) => page.getByText('You seem to be already logged in '),
     sessionCheckButton: (page: Page) => page.getByRole('button', { name: 'Yes' }),
-    dashboardloader: (page: Page) => page.getByText('Loading resources...')
+    dashboardloader: (page: Page) => page.getByText('Loading resources...'),
+    studentDashboardloader: (page: Page) => page.getByText('Loading user data...')
 
 }

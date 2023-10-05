@@ -13,12 +13,20 @@ export const loginSteps ={
         if(await loginPage.sessionCheck(page).isVisible()){
             await loginPage.sessionCheckButton(page).click()
         }
-        await expect(page).toHaveURL('https://staging.annotate.net/instructor')
+        //await expect(page).toHaveURL('https://staging.annotate.net/instructor')
         //await page.waitForTimeout(10000)
          
-        await expect(loginPage.dashboardloader(page)).toBeVisible({timeout:20000})
-        await expect(loginPage.dashboardloader(page)).toBeHidden()
-        //await loginPage.dashboardloader(page).waitFor({state: "visible"})
+        // await expect(loginPage.dashboardloader(page)).toBeVisible({timeout:20000})
+        // await expect(loginPage.dashboardloader(page)).not.toBeVisible()
+        // await loginPage.dashboardloader(page).waitFor({state: "visible"})
         // await loginPage.dashboardloader(page).waitFor({state: "hidden"})
+        if(page.url() == 'https://staging.annotate.net/instructor' ){
+            await loginPage.dashboardloader(page).waitFor({state: "visible"})
+            await loginPage.dashboardloader(page).waitFor({state: "hidden"})
+        }
+        if(page.url() == 'https://staging.annotate.net/student' ){
+            await loginPage.studentDashboardloader(page).waitFor({state: "visible"})
+            await loginPage.studentDashboardloader(page).waitFor({state: "hidden"})
+        }
     },
 }

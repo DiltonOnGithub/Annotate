@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 0,
+    "maxFailures": 1,
     "metadata": {
       "actualWorkers": 1
     },
@@ -49,13 +49,13 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 0
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.38.0",
-    "workers": 2,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -69,186 +69,16 @@
         {
           "title": "Notebook Test Cases",
           "file": "notebook.spec.ts",
-          "line": 17,
+          "line": 23,
           "column": 15,
           "specs": [
-            {
-              "title": "Create Notebook",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 120000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 24359,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Assert Notebook",
-                          "duration": 70
-                        }
-                      ],
-                      "startTime": "2023-09-29T13:35:06.930Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "1f73cefbff9118457938-6151dc3b0e293b9d9c91",
-              "file": "notebook.spec.ts",
-              "line": 24,
-              "column": 7
-            },
-            {
-              "title": "Delete Notebook",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 12292,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Number of items: 8\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Delete Notebook From Trash",
-                          "duration": 5664
-                        }
-                      ],
-                      "startTime": "2023-09-29T13:35:49.827Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "1f73cefbff9118457938-01965ec701623f1bf610",
-              "file": "notebook.spec.ts",
-              "line": 37,
-              "column": 7
-            },
-            {
-              "title": "Restore Notebook",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 8945,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Number of items: 8\n"
-                        },
-                        {
-                          "text": "Number of items: 7\n"
-                        },
-                        {
-                          "text": "Called restore:\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Restore Notebook From Trash",
-                          "duration": 5581
-                        }
-                      ],
-                      "startTime": "2023-09-29T13:36:02.122Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "1f73cefbff9118457938-c6401705b5d9de28c277",
-              "file": "notebook.spec.ts",
-              "line": 46,
-              "column": 7
-            },
-            {
-              "title": "Empty Trash",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 4498,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Number of items: 7\n"
-                        },
-                        {
-                          "text": "Number of items: 0\n"
-                        },
-                        {
-                          "text": "Called empty trash:\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-09-29T13:36:11.068Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "1f73cefbff9118457938-beda5bc95576c9c0fe23",
-              "file": "notebook.spec.ts",
-              "line": 54,
-              "column": 7
-            },
             {
               "title": "Logout",
               "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 0,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -257,12 +87,12 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 1575,
+                      "duration": 3630,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-09-29T13:36:15.569Z",
+                      "startTime": "2023-10-05T05:25:47.017Z",
                       "attachments": []
                     }
                   ],
@@ -271,7 +101,7 @@
               ],
               "id": "1f73cefbff9118457938-0ed46151e9cb05888ef9",
               "file": "notebook.spec.ts",
-              "line": 58,
+              "line": 74,
               "column": 7
             }
           ]

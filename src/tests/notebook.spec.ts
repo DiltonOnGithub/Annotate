@@ -7,6 +7,7 @@ import { courseClassesSteps } from '../steps/courseClasses.steps';
 const email = data["email"];
 const password = data["password"];
 
+const studentName = "Ben Chang";
 const studentEmail = "ben123";
 const studentPassword = "Password1";
 
@@ -15,18 +16,18 @@ const MyNotebook1 = "New Notebook "+timestamp+" 1";
 const MyNotebook2 = "New Notebook "+timestamp+" 2";
 const MyNotebook3 = "New Notebook "+timestamp+" 3";
 
-let context: BrowserContext;
-let page: Page;
+let instructoContext: BrowserContext;
+let instructorPage: Page;
 let studentContext: BrowserContext;
 let studentPage: Page;
 
 test.describe.serial('Notebook Test Cases', () => {
   test.beforeAll(async ({ browser}) => {
-    context = await browser.newContext()
-    page = await context.newPage()
+    instructoContext = await browser.newContext()
+    instructorPage = await instructoContext.newPage()
     studentContext = await browser.newContext()
-    studentPage = await context.newPage()
-    await loginSteps.login(page, email, password)
+    studentPage = await studentContext.newPage()
+    await loginSteps.login(instructorPage, email, password)
     await loginSteps.login(studentPage, studentEmail, studentPassword)
   }) 
 
@@ -63,20 +64,20 @@ test.describe.serial('Notebook Test Cases', () => {
   // test("Empty Trash", async () => {
   //   await contentLibrarySteps.emptyTrash(page)
   // })
-  // test("Create Course", async () => {
-  //   await courseClassesSteps.createCourse(page, "NewCourse")
-  // })
+  test("Create Course", async () => {
+    await courseClassesSteps.createCourse(instructorPage, timestamp)
+  })
 
   // test("Student enroll to Course", async () => {
   //   await courseClassesSteps.enrollToCourse(page, "NewCourse")
   // })
 
   test("Logout", async () => {
-    await expect(page).toHaveURL('https://staging.annotate.net/instructor');
+    await expect(instructorPage).toHaveURL('https://staging.annotate.net/instructor');
     await expect(studentPage).toHaveURL('https://staging.annotate.net/student');
     //await page.reload({timeout: 5000})
-    await page.click("'Logout'");
-    await expect(page).toHaveURL('https://staging.annotate.net/login.php');
+    await instructorPage.click("'Logout'");
+    await expect(instructorPage).toHaveURL('https://staging.annotate.net/login.php');
     await studentPage.click("'Logout'");
     await expect(studentPage).toHaveURL('https://staging.annotate.net/login.php');
   })
