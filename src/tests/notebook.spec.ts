@@ -6,7 +6,7 @@ import { courseClassesSteps } from '../steps/courseClasses.steps';
 
 const email = data["email"];
 const password = data["password"];
-
+var code: string;
 const studentName = "Ben Chang";
 const studentEmail = "ben123";
 const studentPassword = "Password1";
@@ -64,14 +64,19 @@ test.describe.serial('Notebook Test Cases', () => {
   // test("Empty Trash", async () => {
   //   await contentLibrarySteps.emptyTrash(page)
   // })
-  test("Create Course", async () => {
-    await courseClassesSteps.createCourse(instructorPage, timestamp)
+  
+  test("Instructor Create Course", async () => {
+    code = await courseClassesSteps.createCourse(instructorPage, timestamp)
+    
   })
-
-  // test("Student enroll to Course", async () => {
-  //   await courseClassesSteps.enrollToCourse(page, "NewCourse")
-  // })
-
+  test("Student Enroll to Course", async () => {
+    await courseClassesSteps.enrollToCourse(studentPage, code)
+    
+  })
+  test("Instructor accept Student", async () => {
+    await courseClassesSteps.acceptStudent(instructorPage, timestamp, studentName)
+    
+  })
   test("Logout", async () => {
     await expect(instructorPage).toHaveURL('https://staging.annotate.net/instructor');
     await expect(studentPage).toHaveURL('https://staging.annotate.net/student');
