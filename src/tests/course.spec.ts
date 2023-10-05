@@ -22,6 +22,7 @@ let studentPage: Page;
 
 test.describe.serial('Course Test Cases', () => {
   test.beforeAll(async ({ browser}) => {
+    test.setTimeout(120000)
     instructoContext = await browser.newContext()
     instructorPage = await instructoContext.newPage()
     studentContext = await browser.newContext()

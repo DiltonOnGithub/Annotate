@@ -10,7 +10,7 @@ export const courseClassesPageStudent = {
     courseUnenroll: (page: Page) => page.locator('//*[@data-id="Z" and text()="Unenroll"]'),
 
     //fa
-    coursefabButton: (page: Page) => page.locator('//*[@class="widget fab" and @data-id="XFAB"]//*[@data-id="XIconButton"]//div[@data-id="XIcon"]'),
+    coursefabButton: (page: Page) => page.locator('//*[ @data-id="XFAB"]//*[@data-id="XIconButton"]//div[@data-id="XIcon"]'),
     courseCodeInput: (page: Page) => page.locator('//*[@data-id="AddClassDialog"]//*[@data-id="ZInputWidget"]'),
     addCourseButton: (page: Page) => page.locator('//*[@data-id="AddClassDialog"]//*[@data-id="XDialogFooter"]//*[@data-id="XButton" and text()="Add"]'),
     courseCodeConfirm: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Confirm"]'),

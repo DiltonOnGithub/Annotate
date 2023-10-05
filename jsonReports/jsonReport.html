@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "D:\\Dilton\\Zeus\\Annotate\\playwright.config.ts",
-    "rootDir": "D:/Dilton/Zeus/Annotate/src/tests",
+    "configFile": "D:\\TaskCodes\\Annotate\\playwright.config.ts",
+    "rootDir": "D:/TaskCodes/Annotate/src/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -39,12 +39,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "D:/Dilton/Zeus/Annotate/test-results",
+        "outputDir": "D:/TaskCodes/Annotate/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/Dilton/Zeus/Annotate/src/tests",
+        "testDir": "D:/TaskCodes/Annotate/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -60,29 +60,25 @@
   },
   "suites": [
     {
-      "title": "notebook.spec.ts",
-      "file": "notebook.spec.ts",
+      "title": "course.spec.ts",
+      "file": "course.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Notebook Test Cases",
-          "file": "notebook.spec.ts",
-          "line": 24,
+          "title": "Course Test Cases",
+          "file": "course.spec.ts",
+          "line": 23,
           "column": 15,
           "specs": [
             {
               "title": "Instructor Create Course",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
-<<<<<<< HEAD
-                  "timeout": 120000,
-=======
                   "timeout": 30000,
->>>>>>> 5e2feaa5e1179baacf710ceba0b5713bb4443b3a
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -90,36 +86,46 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "passed",
-<<<<<<< HEAD
-                      "duration": 40404,
-=======
-                      "duration": 9210,
->>>>>>> 5e2feaa5e1179baacf710ceba0b5713bb4443b3a
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 16,
+                      "error": {
+                        "message": "locator.waitFor: Page closed\n=========================== logs ===========================\nwaiting for getByText('Loading resources...') to be hidden\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n============================================================",
+                        "stack": "Error: locator.waitFor: Page closed\n=========================== logs ===========================\nwaiting for getByText('Loading resources...') to be hidden\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n============================================================\n    at Object.login (D:\\TaskCodes\\Annotate\\src\\steps\\login.steps.ts:25:51)\n    at D:\\TaskCodes\\Annotate\\src\\tests\\course.spec.ts:30:5",
+                        "location": {
+                          "file": "D:\\TaskCodes\\Annotate\\src\\steps\\login.steps.ts",
+                          "column": 51,
+                          "line": 25
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\steps\\login.steps.ts:25\n\n\u001b[0m \u001b[90m 23 |\u001b[39m         \u001b[36mif\u001b[39m(page\u001b[33m.\u001b[39murl() \u001b[33m==\u001b[39m \u001b[32m'https://staging.annotate.net/instructor'\u001b[39m ){\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m             \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mdashboardloader(page)\u001b[33m.\u001b[39mwaitFor({state\u001b[33m:\u001b[39m \u001b[32m\"visible\"\u001b[39m})\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m             \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mdashboardloader(page)\u001b[33m.\u001b[39mwaitFor({state\u001b[33m:\u001b[39m \u001b[32m\"hidden\"\u001b[39m})\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 27 |\u001b[39m         \u001b[36mif\u001b[39m(page\u001b[33m.\u001b[39murl() \u001b[33m==\u001b[39m \u001b[32m'https://staging.annotate.net/student'\u001b[39m ){\u001b[0m\n\u001b[0m \u001b[90m 28 |\u001b[39m             \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mstudentDashboardloader(page)\u001b[33m.\u001b[39mwaitFor({state\u001b[33m:\u001b[39m \u001b[32m\"visible\"\u001b[39m})\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\TaskCodes\\Annotate\\src\\steps\\login.steps.ts",
+                            "column": 51,
+                            "line": 25
+                          },
+                          "message": "Error: locator.waitFor: Page closed\n=========================== logs ===========================\nwaiting for getByText('Loading resources...') to be hidden\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n  locator resolved to visible <div id=\"splash-screen-loading-msg\">Loading resources...</div>\n============================================================\n\n\u001b[90m   at \u001b[39m..\\steps\\login.steps.ts:25\n\n\u001b[0m \u001b[90m 23 |\u001b[39m         \u001b[36mif\u001b[39m(page\u001b[33m.\u001b[39murl() \u001b[33m==\u001b[39m \u001b[32m'https://staging.annotate.net/instructor'\u001b[39m ){\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m             \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mdashboardloader(page)\u001b[33m.\u001b[39mwaitFor({state\u001b[33m:\u001b[39m \u001b[32m\"visible\"\u001b[39m})\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m             \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mdashboardloader(page)\u001b[33m.\u001b[39mwaitFor({state\u001b[33m:\u001b[39m \u001b[32m\"hidden\"\u001b[39m})\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 27 |\u001b[39m         \u001b[36mif\u001b[39m(page\u001b[33m.\u001b[39murl() \u001b[33m==\u001b[39m \u001b[32m'https://staging.annotate.net/student'\u001b[39m ){\u001b[0m\n\u001b[0m \u001b[90m 28 |\u001b[39m             \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mstudentDashboardloader(page)\u001b[33m.\u001b[39mwaitFor({state\u001b[33m:\u001b[39m \u001b[32m\"visible\"\u001b[39m})\u001b[0m\n\n\u001b[2m    at Object.login (D:\\TaskCodes\\Annotate\\src\\steps\\login.steps.ts:25:51)\u001b[22m\n\u001b[2m    at D:\\TaskCodes\\Annotate\\src\\tests\\course.spec.ts:30:5\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-<<<<<<< HEAD
-                      "steps": [
-                        {
-                          "title": "Assert Notebook",
-                          "duration": 27
-                        }
-                      ],
-                      "startTime": "2023-09-29T10:08:04.502Z",
-=======
-                      "startTime": "2023-10-05T08:38:13.491Z",
->>>>>>> 5e2feaa5e1179baacf710ceba0b5713bb4443b3a
-                      "attachments": []
+                      "startTime": "2023-10-05T10:50:59.868Z",
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "D:\\TaskCodes\\Annotate\\src\\steps\\login.steps.ts",
+                        "column": 51,
+                        "line": 25
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "1f73cefbff9118457938-d1d507824a6b03d0d62a",
-              "file": "notebook.spec.ts",
-              "line": 67,
+              "id": "05abb6b8cf5ad10e7f56-2495744628b11b1b0fe0",
+              "file": "course.spec.ts",
+              "line": 33,
               "column": 7
             },
             {
@@ -135,141 +141,23 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "status": "passed",
-<<<<<<< HEAD
-                      "duration": 11903,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Number of items: 16\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Delete Notebook From Trash",
-                          "duration": 5440
-                        }
-                      ],
-                      "startTime": "2023-09-29T10:09:08.169Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "1f73cefbff9118457938-01965ec701623f1bf610",
-              "file": "notebook.spec.ts",
-              "line": 37,
-              "column": 7
-            },
-            {
-              "title": "Restore Notebook",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 8696,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Number of items: 16\n"
-                        },
-                        {
-                          "text": "Number of items: 15\n"
-                        },
-                        {
-                          "text": "Called restore:\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Restore Notebook From Trash",
-                          "duration": 5465
-                        }
-                      ],
-                      "startTime": "2023-09-29T10:09:20.074Z",
-=======
-                      "duration": 26128,
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-05T08:38:44.010Z",
->>>>>>> 5e2feaa5e1179baacf710ceba0b5713bb4443b3a
+                      "startTime": "2023-10-05T10:52:06.032Z",
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
-              "id": "1f73cefbff9118457938-63825a0935457b4cf800",
-              "file": "notebook.spec.ts",
-              "line": 73,
-              "column": 7
-            },
-            {
-              "title": "Instructor accept Student",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-<<<<<<< HEAD
-                      "duration": 4569,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Number of items: 15\n"
-                        },
-                        {
-                          "text": "Number of items: 0\n"
-                        },
-                        {
-                          "text": "Called empty trash:\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-09-29T10:09:28.772Z",
-=======
-                      "duration": 2242,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-10-05T08:39:10.141Z",
->>>>>>> 5e2feaa5e1179baacf710ceba0b5713bb4443b3a
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "1f73cefbff9118457938-13f3e1d7fb2988b1b81b",
-              "file": "notebook.spec.ts",
-              "line": 78,
+              "id": "05abb6b8cf5ad10e7f56-bc01d893b16de211fa43",
+              "file": "course.spec.ts",
+              "line": 38,
               "column": 7
             },
             {
@@ -285,31 +173,23 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "status": "passed",
-<<<<<<< HEAD
-                      "duration": 1510,
-=======
-                      "duration": 3234,
->>>>>>> 5e2feaa5e1179baacf710ceba0b5713bb4443b3a
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-<<<<<<< HEAD
-                      "startTime": "2023-09-29T10:09:33.342Z",
-=======
-                      "startTime": "2023-10-05T08:39:12.386Z",
->>>>>>> 5e2feaa5e1179baacf710ceba0b5713bb4443b3a
+                      "startTime": "2023-10-05T10:52:06.032Z",
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
-              "id": "1f73cefbff9118457938-0ed46151e9cb05888ef9",
-              "file": "notebook.spec.ts",
-              "line": 82,
+              "id": "05abb6b8cf5ad10e7f56-b9278ed02ef8a6abf561",
+              "file": "course.spec.ts",
+              "line": 48,
               "column": 7
             }
           ]
