@@ -27,6 +27,7 @@ test.describe.serial('Course Test Cases', () => {
     instructorPage = await instructoContext.newPage()
     studentContext = await browser.newContext()
     studentPage = await studentContext.newPage()
+    await instructorPage.bringToFront()
     await loginSteps.login(instructorPage, email, password)
   }) 
 
@@ -36,9 +37,11 @@ test.describe.serial('Course Test Cases', () => {
   })
 
   test("Student Enroll to Course", async () => {
+    await studentPage.bringToFront()
     await loginSteps.login(studentPage, studentEmail, studentPassword)
     await courseClassesSteps.enrollToCourse(studentPage, courseCode)
     await test.step('Instructor accept student to course', async() =>{
+        await instructorPage.bringToFront()
         await expect(courseClassesPage.courseCard(instructorPage, courseName)).toBeVisible()
         await courseClassesSteps.acceptStudent(instructorPage, courseName, studentName)
         await expect(courseClassesPage.studentBar(instructorPage, studentName)).toBeVisible()
@@ -47,11 +50,17 @@ test.describe.serial('Course Test Cases', () => {
 
   test("Logout", async () => {
     await expect(instructorPage).toHaveURL('https://staging.annotate.net/instructor');
-    await expect(studentPage).toHaveURL('https://staging.annotate.net/student');
     await instructorPage.click("'Logout'");
     await expect(instructorPage).toHaveURL('https://staging.annotate.net/login.php');
+    await studentPage.bringToFront()
+    await expect(studentPage).toHaveURL('https://staging.annotate.net/student');
     await studentPage.click("'Logout'");
     await expect(studentPage).toHaveURL('https://staging.annotate.net/login.php');
   })
   
 })
+//regular instructor
+//pro instructor
+//paid, free stdnt
+//instructed created student -> instrtr upgrades
+//district 
