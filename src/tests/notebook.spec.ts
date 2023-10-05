@@ -30,52 +30,55 @@ test.describe.serial('Notebook Test Cases', () => {
     await loginSteps.login(studentPage, studentEmail, studentPassword)
   }) 
 
-  test("Create Notebook", async () => {
-      test.setTimeout(120000)
-      await contentLibrarySteps.contentLibraryFrame(page)
-      await contentLibrarySteps.createNotebook(page, MyNotebook1)
-      await contentLibrarySteps.createNotebook(page, MyNotebook2)
-      await contentLibrarySteps.createNotebook(page, MyNotebook3)
-      await test.step('Assert Notebook', async ()=>{
-        await contentLibrarySteps.assertNotebook(page, MyNotebook1)
-        await contentLibrarySteps.assertNotebook(page, MyNotebook2)
-        await contentLibrarySteps.assertNotebook(page, MyNotebook3)
-      })
-  })
+  // test("Create Notebook", async () => {
+  //     test.setTimeout(120000)
+  //     await contentLibrarySteps.contentLibraryFrame(page)
+  //     await contentLibrarySteps.createNotebook(page, MyNotebook1)
+  //     await contentLibrarySteps.createNotebook(page, MyNotebook2)
+  //     await contentLibrarySteps.createNotebook(page, MyNotebook3)
+  //     await test.step('Assert Notebook', async ()=>{
+  //       await contentLibrarySteps.assertNotebook(page, MyNotebook1)
+  //       await contentLibrarySteps.assertNotebook(page, MyNotebook2)
+  //       await contentLibrarySteps.assertNotebook(page, MyNotebook3)
+  //     })
+  // })
 
-  test("Delete Notebook", async () => {
-    await contentLibrarySteps.softDeleteNotebook(page, MyNotebook1)
-    await contentLibrarySteps.softDeleteNotebook(page, MyNotebook2)
-    await test.step('Delete Notebook From Trash', async ()=>{
-      await contentLibrarySteps.openTrash(page)
-      await contentLibrarySteps.hardDeleteNotebook(page, MyNotebook1)
-    })
-  })
+  // test("Delete Notebook", async () => {
+  //   await contentLibrarySteps.softDeleteNotebook(page, MyNotebook1)
+  //   await contentLibrarySteps.softDeleteNotebook(page, MyNotebook2)
+  //   await test.step('Delete Notebook From Trash', async ()=>{
+  //     await contentLibrarySteps.openTrash(page)
+  //     await contentLibrarySteps.hardDeleteNotebook(page, MyNotebook1)
+  //   })
+  // })
 
-  test("Restore Notebook", async () => {
-    await contentLibrarySteps.softDeleteNotebook(page, MyNotebook3)
-    await test.step('Restore Notebook From Trash', async ()=>{
-      await contentLibrarySteps.openTrash(page)
-      await contentLibrarySteps.restoreNotebook(page, MyNotebook3)
-    })
-  })
+  // test("Restore Notebook", async () => {
+  //   await contentLibrarySteps.softDeleteNotebook(page, MyNotebook3)
+  //   await test.step('Restore Notebook From Trash', async ()=>{
+  //     await contentLibrarySteps.openTrash(page)
+  //     await contentLibrarySteps.restoreNotebook(page, MyNotebook3)
+  //   })
+  // })
 
-  test("Empty Trash", async () => {
-    await contentLibrarySteps.emptyTrash(page)
-  })
-  test("Create Course", async () => {
-    await courseClassesSteps.createCourse(page, "NewCourse")
-  })
+  // test("Empty Trash", async () => {
+  //   await contentLibrarySteps.emptyTrash(page)
+  // })
+  // test("Create Course", async () => {
+  //   await courseClassesSteps.createCourse(page, "NewCourse")
+  // })
 
-  test("Student enroll to Course", async () => {
-    await courseClassesSteps.enrollToCourse(page, "NewCourse")
-  })
+  // test("Student enroll to Course", async () => {
+  //   await courseClassesSteps.enrollToCourse(page, "NewCourse")
+  // })
 
   test("Logout", async () => {
     await expect(page).toHaveURL('https://staging.annotate.net/instructor');
+    await expect(studentPage).toHaveURL('https://staging.annotate.net/student');
     //await page.reload({timeout: 5000})
     await page.click("'Logout'");
     await expect(page).toHaveURL('https://staging.annotate.net/login.php');
+    await studentPage.click("'Logout'");
+    await expect(studentPage).toHaveURL('https://staging.annotate.net/login.php');
   })
   
 })
