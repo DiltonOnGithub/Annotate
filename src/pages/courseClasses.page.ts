@@ -15,5 +15,34 @@ export const courseClassesPage = {
     studentBar: (page: Page, studentName: string) => page.locator(`//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]`),
     acceptStudentButton: (page: Page, studentName: string) => page.locator(`//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]//*[@data-id="XButton" and text()="Accept"]`),
 
+    //Project
+    courseCardProject:  (page: Page, courseName: string) => page.locator(`//*[@data-id="CourseItem" and contains(.,"${courseName}")]//*[@data-id="XUpdateIconButton" and @title="Projects"]//*[@data-id="XIcon"]`),
+    projectFabButton: (page: Page) => page.locator('//*[@data-id="HomePanel"]//*[@data-id="XFAB"]//*[@data-id="XIconButton"]//div[@data-id="XIcon"]'),
+    projectNameInput: (page: Page) => page.locator('//*[@data-id="XProjectDialog" and contains(.,"New Project")]//*[@data-id="ExtScrollView"]//*[@data-id="ExtScrollForm"]//*[@data-id="XInputWidget" and contains(.,"Project name")]//*[@data-id="ZInputWidget"]'),
+    projectDescriptionInput: (page: Page) => page.locator('//*[@data-id="XProjectDialog" and contains(.,"New Project")]//*[@data-id="ExtScrollView"]//*[@data-id="ExtScrollForm"]//*[@data-id="ContentEditableWC"]'),
+    projectPointsInput: (page: Page) => page.locator('//*[@data-id="XProjectDialog" and contains(.,"New Project")]//*[@data-id="ExtScrollView"]//*[@data-id="ExtScrollForm"]//*[@data-id="XInputWidget" and contains(.,"Points")]//*[@data-id="ZInputWidget"]'),
+    optionDropdownMenu: (page: Page) => page.locator('//*[@data-id="XProjectDialog"]//*[@data-id="DropDownList"]//*[@data-id="TwoFoldTextListItem" and contains(.,"A blank notebook")]'),
+    optionDropdownMenuAttachedNotebookSelect: (page: Page) => page.locator('//*[@data-id="Z"]//*[@data-id="ListBase"]//*[@data-id="TwoFoldTextListItem" and contains(.,"An attached notebook")]'),
+    selectNotebookPlusIcon: (page: Page) => page.locator('//*[@data-id="ExtScrollView"]//*[@data-id="ExtScrollForm"]//*[@data-id="ProjectBlankNotebookWidget"]//*[@data-id="Z" and text()="Click to choose"]'),
+    selectNotebookFromList: (page: Page, notebookName: string) => page.locator(`//*[@data-id="FolderFileClipContainer"]//*[@data-id="LessonListContainer"]//*[@data-id="XLessonListItem"]//*[@data-id="XListViewItem"]//*[@data-id="Z" and text()="${notebookName}"]`),
+    okButtonAfterNotebookSelect: (page: Page) => page.locator('//*[@data-id="XDialogFooter"]//*[@data-id="XButton" and text()="OK"]'),
+    referenceButtonnotebook: (page: Page) => page.locator('//*[@data-id="XIconButton" and @title="Content Library"]'),
+    referenceButtonImages: (page: Page) => page.locator('//*[@data-id="XIconButton" and @title="Images"]'),
+    referenceButtonLinks: (page: Page) => page.locator('//*[@data-id="XIconButton" and @title="Links"]'),
+    dueDataToggleButton: (page: Page) => page.locator('//*[@data-id="XMenuItemWithToggle" and contains(.,"Due date")]//*[@data-id="XToggleButton"]'),
+    studentSelectArrow: (page: Page) => page.locator('//*[@data-id="XMenuItemWithFormAndSubtitle"]//*[@data-id="XIcon"]'),
+    studentSelectAllButton: (page: Page) => page.locator('//*[@data-id="XMenuItemWithCheckbox" and contains(.,"Select All")]//*[@data-id="XIcon"]'),
+    
+    publishProjectButton: (page: Page) => page.locator('//*[@data-id="XButton" and text()="Publish"]'),
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     backButton: (page: Page) => page.locator('//*[@data-id="XHomePanelToolbar"]//*[@data-id="HamburgerMenu"]'),
 }

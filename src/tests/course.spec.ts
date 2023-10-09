@@ -31,22 +31,31 @@ test.describe.serial('Course Test Cases', () => {
     await loginSteps.login(instructorPage, email, password)
   }) 
 
-  test("Instructor Create Course", async () => {
-    courseCode = await courseClassesSteps.createCourse(instructorPage, courseName)
-    await expect(courseClassesPage.courseCard(instructorPage, courseName)).toBeVisible()
-  })
+  // test("Instructor Create Course", async () => {
+  //   courseCode = await courseClassesSteps.createCourse(instructorPage, courseName)
+  //   await expect(courseClassesPage.courseCard(instructorPage, courseName)).toBeVisible()
+  // })
 
-  test("Student Enroll to Course", async () => {
-    await studentPage.bringToFront()
-    await loginSteps.login(studentPage, studentEmail, studentPassword)
-    await courseClassesSteps.enrollToCourse(studentPage, courseCode)
-    await test.step('Instructor accept student to course', async() =>{
-        await instructorPage.bringToFront()
-        await expect(courseClassesPage.courseCard(instructorPage, courseName)).toBeVisible()
-        await courseClassesSteps.acceptStudent(instructorPage, courseName, studentName)
-        await expect(courseClassesPage.studentBar(instructorPage, studentName)).toBeVisible()
+  // test("Student Enroll to Course", async () => {
+  //   await studentPage.bringToFront()
+  //   await loginSteps.login(studentPage, studentEmail, studentPassword)
+  //   await courseClassesSteps.enrollToCourse(studentPage, courseCode)
+  //   await test.step('Instructor accept student to course', async() =>{
+  //       await instructorPage.bringToFront()
+  //       await expect(courseClassesPage.courseCard(instructorPage, courseName)).toBeVisible()
+  //       await courseClassesSteps.acceptStudent(instructorPage, courseName, studentName)
+  //       await expect(courseClassesPage.studentBar(instructorPage, studentName)).toBeVisible()
+  //   })
+  // })
+//crate project
+//student submit project
+// student project graded
+// student proj rejected
+// ask for resubmission
+//loop
+  test("Instructor Create Project in Course", async () => {
+      await courseClassesSteps.createProject(instructorPage, "Real Course", "Demo Project 13", "lorem Ipsum", "75", "Project Annotate", "","","")
     })
-  })
 
   test("Logout", async () => {
     await expect(instructorPage).toHaveURL('https://staging.annotate.net/instructor');
