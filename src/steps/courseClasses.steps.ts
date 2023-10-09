@@ -24,6 +24,7 @@ export const courseClassesSteps = {
         await courseClassesPage.acceptStudentButton(page, studentName).click()
     },
     createProject: async (page: Page, courseName: string, projectName: string, projectDescription: string, projectPoints: string, notebookName: string, refNotebookName: string, refImageName: string, refLink: string) => {
+        await courseClassesPage.courseContenPageButton(page).click()
         await courseClassesPage.courseCardProject(page, courseName).click()
         await courseClassesPage.projectFabButton(page).click()
         await courseClassesPage.projectNameInput(page).fill(projectName)

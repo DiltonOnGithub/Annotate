@@ -19,7 +19,7 @@ export const courseClassesPage = {
     courseCardProject:  (page: Page, courseName: string) => page.locator(`//*[@data-id="CourseItem" and contains(.,"${courseName}")]//*[@data-id="XUpdateIconButton" and @title="Projects"]//*[@data-id="XIcon"]`),
     projectFabButton: (page: Page) => page.locator('//*[@data-id="HomePanel"]//*[@data-id="XFAB"]//*[@data-id="XIconButton"]//div[@data-id="XIcon"]'),
     projectNameInput: (page: Page) => page.locator('//*[@data-id="XProjectDialog" and contains(.,"New Project")]//*[@data-id="ExtScrollView"]//*[@data-id="ExtScrollForm"]//*[@data-id="XInputWidget" and contains(.,"Project name")]//*[@data-id="ZInputWidget"]'),
-    projectDescriptionInput: (page: Page) => page.locator('//*[@data-id="XProjectDialog" and contains(.,"New Project")]//*[@data-id="ExtScrollView"]//*[@data-id="ExtScrollForm"]//*[@data-id="ContentEditableWC"]'),
+    projectDescriptionInput: (page: Page) => page.locator('//*[@data-id="XProjectDialog" and contains(.,"New Project")]//*[@data-id="ExtScrollView"]//*[@data-id="ExtScrollForm"]//*[@data-id="ContentEditableWC"]//div[2]'),
     projectPointsInput: (page: Page) => page.locator('//*[@data-id="XProjectDialog" and contains(.,"New Project")]//*[@data-id="ExtScrollView"]//*[@data-id="ExtScrollForm"]//*[@data-id="XInputWidget" and contains(.,"Points")]//*[@data-id="ZInputWidget"]'),
     optionDropdownMenu: (page: Page) => page.locator('//*[@data-id="XProjectDialog"]//*[@data-id="DropDownList"]//*[@data-id="TwoFoldTextListItem" and contains(.,"A blank notebook")]'),
     optionDropdownMenuAttachedNotebookSelect: (page: Page) => page.locator('//*[@data-id="Z"]//*[@data-id="ListBase"]//*[@data-id="TwoFoldTextListItem" and contains(.,"An attached notebook")]'),

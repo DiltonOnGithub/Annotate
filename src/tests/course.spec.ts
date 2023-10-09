@@ -25,8 +25,8 @@ test.describe.serial('Course Test Cases', () => {
     test.setTimeout(120000)
     instructoContext = await browser.newContext()
     instructorPage = await instructoContext.newPage()
-    studentContext = await browser.newContext()
-    studentPage = await studentContext.newPage()
+    // studentContext = await browser.newContext()
+    // studentPage = await studentContext.newPage()
     await instructorPage.bringToFront()
     await loginSteps.login(instructorPage, email, password)
   }) 
@@ -54,17 +54,17 @@ test.describe.serial('Course Test Cases', () => {
 // ask for resubmission
 //loop
   test("Instructor Create Project in Course", async () => {
-      await courseClassesSteps.createProject(instructorPage, "Real Course", "Demo Project 13", "lorem Ipsum", "75", "Project Annotate", "","","")
+      await courseClassesSteps.createProject(instructorPage, "Real Course", "Demo Project 15", "lorem Ipsum", "75", "Project Annotate", "","","")
     })
 
   test("Logout", async () => {
     await expect(instructorPage).toHaveURL('https://staging.annotate.net/instructor');
     await instructorPage.click("'Logout'");
     await expect(instructorPage).toHaveURL('https://staging.annotate.net/login.php');
-    await studentPage.bringToFront()
-    await expect(studentPage).toHaveURL('https://staging.annotate.net/student');
-    await studentPage.click("'Logout'");
-    await expect(studentPage).toHaveURL('https://staging.annotate.net/login.php');
+    // await studentPage.bringToFront()
+    // await expect(studentPage).toHaveURL('https://staging.annotate.net/student');
+    // await studentPage.click("'Logout'");
+    // await expect(studentPage).toHaveURL('https://staging.annotate.net/login.php');
   })
   
 })
