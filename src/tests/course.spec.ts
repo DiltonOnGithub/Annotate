@@ -71,5 +71,5 @@ test.describe.serial('Course Test Cases', () => {
 //regular instructor
 //pro instructor
 //paid, free stdnt
-//instructed created student -> instrtr upgrades
+//instructor created student -> instrtr upgrades
 //district 
