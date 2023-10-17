@@ -14,8 +14,7 @@ export const courseClassesPagePO = {
     //Course card
     courseCard: (page: Page, courseName: string) => page.locator(`//*[@data-id="CourseItem" and contains(.,"${courseName}")]`),
     courseCardRoster:  (page: Page, courseName: string) => page.locator(`//*[@data-id="CourseItem" and contains(.,"${courseName}")]//*[@data-id="XUpdateIconButton" and @title="Roster"]//*[@data-id="XIcon"]`),
-    studentBar: (page: Page, studentName: string) => page.locator(`//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]`),
-    acceptStudentButton: (page: Page, studentName: string) => page.locator(`//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]//*[@data-id="XButton" and text()="Accept"]`),
+   
     courseCardThreeDots: (page: Page, courseName: string) => page.locator(`//*[@data-id="CourseItem" and contains(.,"${courseName}")]//*[@data-id="Z"]//*[@data-id="XIconButton"]//*[@data-id="XIcon"]`),
     courseCardMoreOptionDeleteButton: (page: Page) => page.locator('//*[@data-id="CourseMoreOption"]//*[@data-id="XMenuItemWithIcon"]//*[@data-id="Z" and text()="Delete"]'),
     deleteCourseButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete"]'),
@@ -42,6 +41,11 @@ export const courseClassesPagePO = {
     
     publishProjectButton: (page: Page) => page.locator('//*[@data-id="XButton" and text()="Publish"]'),
     
+    projectCardThreeDots: (page: Page, projectName: string) => page.locator(`(//*[@data-id="ListBase"]//*[@data-id="TeacherProjectListItem" and contains(.,"${projectName}")]//*[@data-id="XIconButton"]//*[@class="widget icon icon-more_vertical" and @data-id="XIcon"])[2]`),
+    deleteProjectButton: (page: Page) => page.locator('//*[@data-id="ProjectMoreOption"]//*[@data-id="Z" and text()="Delete"]'),
+    deleteProjectConfirmButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Delete" and text()="Delete"]'),
+
+
     // Roster
     rosterFabButton: (page: Page) => page.locator('//*[@data-id="HomePanel"]//*[@data-id="XFAB"]//*[@data-id="XIconButton"]//*[@data-id="XIcon"]'),
     rosterFabMenu: (page: Page) => page.locator('//*[@data-id="XFABContainer"]'),
@@ -50,16 +54,20 @@ export const courseClassesPagePO = {
     searchBox: (page: Page) => page.locator('//*[@data-id="XAddMyStudentDialog"]//*[@data-id="XDialogHeaderWithSearch"]//*[@data-id="ZInputWidget"]'),
     studentCheckBox: (page: Page, studentName: string) =>page.locator(`//*[@data-id="XAddMyStudentDialog"]//*[@data-id="XExistingStudentListView"]//*[@data-id="ListBase"]//*[@data-id="Z"]//*[@data-id="ExistingStudentListItem" and contains(.,"${studentName}")]//*[@data-id="XCheckButton"]`),
     addMyStudentButton: (page: Page) => page.locator('//*[@data-id="XAddMyStudentDialog"]//*[@data-id="XDialogFooter"]//*[@data-id="XButton" and text()="Add"]'),
-        
+    studentBar: (page: Page, studentName: string) => page.locator(`//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]`),
+    acceptStudentButton: (page: Page, studentName: string) => page.locator(`//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]//*[@data-id="XButton" and text()="Accept"]`),
+    removeStudentTrashIcon: (page: Page, studentName: string) => page.locator(`//*[@data-id="CourseStudentsForm"]//*[@data-id="ScrollViewViewport"]//*[@data-id="ExtScrollForm"]//*[@data-id="Z"]//*[@data-id="StudentDataTableListItem" and contains(.,"${studentName}")]//*[@data-id="XIconButton"]//*[@data-id="XIcon"]`),
+    removeStudentButton: (page: Page) => page.locator('//*[@data-id="XMessageBox"]//*[@data-id="XDialogFooter"]//*[@data-id="BUTTON_Remove" and text()="Remove"]'),
     backButton: (page: Page) => page.locator('//*[@data-id="XHomePanelToolbar"]//*[@data-id="HamburgerMenu"]'),
 }
+
 export const courseClassesPageStudentPO = {
    
     backButton: (page: Page) => page.locator('//*[@data-id="XHomePanelToolbar"]//*[@data-id="HamburgerMenu"]'),
     //student page
     
-    courseCard: (page: Page) => page.locator('//*[@data-id="StudentHomePanel"]//*[@data-id="XStudentCourseContainerWidget"]//*[@data-id="StudentCourseItem"]'),
-    courseThreeDots: (page: Page) => page.locator('//*[@data-id="StudentHomePanel"]//*[@data-id="XStudentCourseContainerWidget"]//*[@data-id="StudentCourseItem"]//*[@data-id="Z"]//*[@data-id="XIconButton"]//*[@data-id="XIcon"]'),
+    courseCard: (page: Page, courseName: string) => page.locator(`//*[@data-id="StudentHomePanel"]//*[@data-id="XStudentCourseContainerWidget"]//*[@data-id="StudentCourseItem" and contains(.,"${courseName}")]`),
+    courseThreeDots: (page: Page, courseName: string) => page.locator(`//*[@data-id="StudentHomePanel"]//*[@data-id="XStudentCourseContainerWidget"]//*[@data-id="StudentCourseItem" and contains(.,"${courseName}")]//*[@data-id="Z"]//*[@data-id="XIconButton"]//*[@data-id="XIcon"]`),
     courseUnenroll: (page: Page) => page.locator('//*[@data-id="Z" and text()="Unenroll"]'),
 
     //fa

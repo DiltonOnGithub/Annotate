@@ -1,20 +1,20 @@
 import { test, Page, expect, BrowserContext } from '@playwright/test'
 import env from '../fixtures/env'
 
-import { loginPagePO, contentLibraryPagePO, courseClassesPagePO} from '../pages';
+import { loginPagePO, contentLibraryPagePO, courseClassesPagePO, courseClassesPageStudentPO} from '../pages';
 import { loginPageSteps, courseClassesSteps } from '../steps';
 
 var courseCode: string;
 const moment = require('moment');
 const courseName = moment().format('DD-MM-YY HH:mm:ss')
-const studentName = "Ben Chang"
+const studentName = "ben123"
 
 let instructorContext: BrowserContext;
 let instructorPage: Page;
 let studentContext: BrowserContext;
 let studentPage: Page;
 
-test.describe.serial('Create Course Test Cases', () => {
+test.describe.serial('Create Course And Add/Remove Student From Course Test Cases', () => {
   test.beforeAll(async ({ browser}, testInfo) => {
     env.projectName = testInfo.project.name
     instructorContext = await browser.newContext()
@@ -34,12 +34,6 @@ test.describe.serial('Create Course Test Cases', () => {
     courseCode = await courseClassesSteps.createCourse(instructorPage, courseName)
     await expect(courseClassesPagePO.courseCard(instructorPage, courseName)).toBeVisible()
   })
-  
-  test("Instructor Adds student to created Course", async () => {
-    await courseClassesSteps.addStudentToCourse(instructorPage, courseName, "Troy Barnes")
-    await expect(courseClassesPagePO.studentBar(instructorPage, "Troy Barnes")).toBeVisible()
-    await courseClassesPagePO.backButton(instructorPage).click()
-  })
 
   test("Student Enroll to Course Using Course Code", async () => {
     await studentPage.bringToFront()
@@ -54,7 +48,33 @@ test.describe.serial('Create Course Test Cases', () => {
     })
   })
 
+  test("Instructor Adds student to created Course", async () => {
+    await courseClassesSteps.addStudentToCourse(instructorPage, courseName, "Troy Barnes")
+    await expect(courseClassesPagePO.studentBar(instructorPage, "Troy Barnes")).toBeVisible()
+    await courseClassesPagePO.backButton(instructorPage).click()
+  })
+
+  test("Instructor Removes student from Course", async () => {
+    await courseClassesSteps.removeStudentFromCourse(instructorPage, courseName, "troy123")
+    await expect(courseClassesPagePO.studentBar(instructorPage, "troy123")).not.toBeVisible()
+    //await courseClassesPagePO.backButton(instructorPage).click()
+  })
+
   
+
+  test("Student Unenrolls From Course", async () => {
+    await studentPage.bringToFront()
+    await courseClassesSteps.studentUnenrollsFromCourse(studentPage, courseName)
+    await test.step('Instructor accept student\'s Unenrollment From course', async() =>{
+        await instructorPage.bringToFront()
+        //await courseClassesPagePO.backButton(instructorPage).click()
+        await expect(courseClassesPagePO.courseCard(instructorPage, courseName)).toBeVisible()
+        await courseClassesSteps.acceptStudentUnenrollment(instructorPage, courseName, studentName)
+        await expect(courseClassesPagePO.studentBar(instructorPage, studentName)).not.toBeVisible()
+        await courseClassesPagePO.backButton(instructorPage).click()
+        await expect(courseClassesPageStudentPO.courseCard(studentPage, courseName)).not.toBeVisible()
+    })
+  })
 
   test('Delete Course', async () => {
     await expect(courseClassesPagePO.courseCard(instructorPage, courseName)).toBeVisible()
